@@ -8,8 +8,10 @@ import styled from 'styled-components';
 import React from 'react';
 import Intro from '../components/index/Intro';
 import Skills from '../components/index/Skills/Skills';
+import { GraphQLClient } from 'graphql-request';
+import CaseStudyList from '../components/index/CaseStudyList/CaseStudyList';
 
-export default function Home({ allPostsData }) {
+export default function Home({ posts }) {
   return (
     <Layout home>
       <Head>
@@ -21,6 +23,8 @@ export default function Home({ allPostsData }) {
       </Head>
       <Intro />
       <Skills />
+      <Title>Recent work</Title>
+      <CaseStudyList caseStudies={posts} />
       {/* <section className={utilStyles.headingMd}>
         <p>[Your Self Introduction]</p>
         <p>
@@ -49,10 +53,21 @@ export default function Home({ allPostsData }) {
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+  const graphcms = new GraphQLClient(process.env.GRAPH_ENDPOINT);
+
+  const { posts } = await graphcms.request(`
+	{
+		posts {
+			title,
+			excerpt,
+			slug,
+		}
+	}
+  `);
+
   return {
     props: {
-      allPostsData,
+      posts,
     },
   };
 }
