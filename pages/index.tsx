@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
-import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
 import { Container, Paragraph, SubTitle, Title } from '../styles/styles';
@@ -11,7 +10,7 @@ import Skills from '../components/index/Skills/Skills';
 import { GraphQLClient } from 'graphql-request';
 import CaseStudyList from '../components/index/CaseStudyList/CaseStudyList';
 
-export default function Home({ posts }) {
+export default function Home({ caseStudies }) {
   return (
     <Layout home>
       <Head>
@@ -25,7 +24,7 @@ export default function Home({ posts }) {
       <Skills />
       <Container>
         <Title style={{ marginTop: '2rem' }}>Recent work</Title>
-        <CaseStudyList caseStudies={posts} />
+        <CaseStudyList caseStudies={caseStudies} />
       </Container>
       {/* <section className={utilStyles.headingMd}>
         <p>[Your Self Introduction]</p>
@@ -57,11 +56,11 @@ export default function Home({ posts }) {
 export async function getStaticProps() {
   const graphcms = new GraphQLClient(process.env.GRAPH_ENDPOINT);
 
-  const { posts } = await graphcms.request(`
+  const { caseStudies } = await graphcms.request(`
 	{
-		posts {
+		caseStudies {
 			title,
-			excerpt,
+			description,
 			slug,
 			coverImage {
 				url,
@@ -72,7 +71,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts,
+      caseStudies,
     },
   };
 }

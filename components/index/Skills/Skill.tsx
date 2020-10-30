@@ -17,7 +17,9 @@ const Wrapper = styled.div`
   flex: 1;
   position: relative;
   height: 200px;
-  transition: background-color 0.1s ease-out;
+  transition: background-color 0.1s ease-out, box-shadow 0.2s ease-out;
+  overflow: hidden;
+  background-color: white;
 
   &:not(:last-child) {
     border-right: none;
@@ -25,6 +27,8 @@ const Wrapper = styled.div`
 
   &:hover {
     cursor: default;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08);
+    z-index: 10;
   }
 `;
 
@@ -43,14 +47,14 @@ const Title = styled.div<WrapperI>`
 const Description = styled.div<WrapperI>`
   position: absolute;
   left: 50%;
-  top: 45%;
+  top: ${(props) => (props.isHovered ? '50%' : '100%')};
   transform: translateX(-50%) translateY(-50%);
   opacity: ${(props) => (props.isHovered ? '1' : '0')};
   width: 90%;
   max-height: 22%;
   overflowy: hide;
 
-  transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, top 0.22s ease-out;
 `;
 
 const Skill = (props: SkillI) => {

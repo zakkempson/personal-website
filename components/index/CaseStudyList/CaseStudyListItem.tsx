@@ -6,7 +6,7 @@ import styled from 'styled-components';
 export interface CaseStudyListItemI {
   title: string;
   slug: string;
-  excerpt: string;
+  description: string;
   coverImage: {
     url: string;
   };
@@ -16,7 +16,7 @@ const ListItemWrapper = styled.div`
   display: flex;
   cursor: pointer;
   padding: 2.4rem 0rem;
-  border-top: 1px solid #d0d0d0;
+  border-top: 1px solid #eeeeee;
   transition: opacity 0.2s ease-out;
 
   &:hover {
@@ -45,16 +45,16 @@ const FeatureImage = styled.img`
 `;
 
 const CaseStudyListItem = (props: CaseStudyListItemI) => {
-  const { title, slug, excerpt, coverImage } = props;
+  const { title, slug, description, coverImage } = props;
 
   return (
-    <Link href={`/${slug}`}>
+    <Link href={`/case-studies/${slug}`}>
       <ListItemWrapper>
         <ListItemTitle>
           <SubTitle>{title}</SubTitle>
         </ListItemTitle>
         <ListItemDescription>
-          <Paragraph>{excerpt}</Paragraph>
+          <Paragraph>{description}</Paragraph>
         </ListItemDescription>
         <ListItemImage>
           <FeatureImage src={coverImage?.url} alt='Cover image' />

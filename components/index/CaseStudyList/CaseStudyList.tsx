@@ -13,7 +13,7 @@ const ListWrapper = styled.div`
 const CaseStudyList = (props: CaseStudyListI) => {
   return (
     <ListWrapper>
-      {props.caseStudies.map((cs) => (
+      {props.caseStudies?.map((cs) => (
         <CaseStudyListItem {...cs} key={cs.slug} />
       ))}
     </ListWrapper>
