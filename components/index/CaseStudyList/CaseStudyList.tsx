@@ -1,17 +1,22 @@
 import React from 'react';
 import CaseStudyListItem, { CaseStudyListItemI } from './CaseStudyListItem';
+import styled from 'styled-components';
 
 interface CaseStudyListI {
   caseStudies: CaseStudyListItemI[];
 }
 
+const ListWrapper = styled.div`
+  padding-top: 3rem;
+`;
+
 const CaseStudyList = (props: CaseStudyListI) => {
   return (
-    <div>
+    <ListWrapper>
       {props.caseStudies.map((cs) => (
         <CaseStudyListItem {...cs} key={cs.slug} />
       ))}
-    </div>
+    </ListWrapper>
   );
 };
 

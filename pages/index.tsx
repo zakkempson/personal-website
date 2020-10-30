@@ -3,7 +3,7 @@ import Layout, { siteTitle } from '../components/layout';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
-import { Paragraph, SubTitle, Title } from '../styles/styles';
+import { Container, Paragraph, SubTitle, Title } from '../styles/styles';
 import styled from 'styled-components';
 import React from 'react';
 import Intro from '../components/index/Intro';
@@ -23,8 +23,10 @@ export default function Home({ posts }) {
       </Head>
       <Intro />
       <Skills />
-      <Title>Recent work</Title>
-      <CaseStudyList caseStudies={posts} />
+      <Container>
+        <Title style={{ marginTop: '2rem' }}>Recent work</Title>
+        <CaseStudyList caseStudies={posts} />
+      </Container>
       {/* <section className={utilStyles.headingMd}>
         <p>[Your Self Introduction]</p>
         <p>
@@ -61,6 +63,9 @@ export async function getStaticProps() {
 			title,
 			excerpt,
 			slug,
+			coverImage {
+				url,
+			},
 		}
 	}
   `);

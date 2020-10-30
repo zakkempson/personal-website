@@ -1,14 +1,13 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
-const name = '[Your Name]';
-export const siteTitle = 'Next.js Sample Website';
+export const siteTitle = 'Zak Kempson | Product Designer';
 
 export default function Layout({ children, home }) {
   return (
     <div>
       <Head>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/images/zak.png' />
         <meta
           name='description'
           content='Learn how to build a personal website using Next.js'

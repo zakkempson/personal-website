@@ -24,7 +24,7 @@ const Wrapper = styled.div`
   }
 
   &:hover {
-    background-color: #ff9e52;
+    cursor: default;
   }
 `;
 
@@ -37,7 +37,7 @@ const Title = styled.div<WrapperI>`
   transform: translateX(-50%) translateY(-50%);
   z-index: 10;
 
-  transition: top 0.1s ease-out;
+  transition: top 0.2s ease-out;
 `;
 
 const Description = styled.div<WrapperI>`
@@ -50,7 +50,7 @@ const Description = styled.div<WrapperI>`
   max-height: 22%;
   overflowy: hide;
 
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 `;
 
 const Skill = (props: SkillI) => {
@@ -62,11 +62,11 @@ const Skill = (props: SkillI) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <Title isHovered={isHovered}>
-        <SubTitle inverted={isHovered}>b</SubTitle>
-        <Paragraph inverted={isHovered}>{props.title}</Paragraph>
+        <SubTitle>b</SubTitle>
+        <Paragraph>{props.title}</Paragraph>
       </Title>
       <Description isHovered={isHovered}>
-        <Detail inverted>{props.description}</Detail>
+        <Detail>{props.description}</Detail>
       </Description>
     </Wrapper>
   );

@@ -50,3 +50,8 @@ export const Detail = styled.p<TextI>`
 
   transition: color 0.1s ease-out;
 `;
+
+export const Container = styled.div`
+  max-width: 1300px;
+  margin: auto;
+`;
