@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { Paragraph, H3 } from '../../../styles/styles';
+import { Paragraph, H3, Detail } from '../../../styles/styles';
 import styled from 'styled-components';
 
 export interface CaseStudyListItemI {
@@ -10,6 +10,7 @@ export interface CaseStudyListItemI {
   coverImage: {
     url: string;
   };
+  roles: string[];
 }
 
 const ListItemWrapper = styled.div`
@@ -27,6 +28,9 @@ const ListItemWrapper = styled.div`
 const ListItemTitle = styled.div`
   flex: 1;
   padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const ListItemDescription = styled.div`
@@ -52,6 +56,7 @@ const CaseStudyListItem = (props: CaseStudyListItemI) => {
       <ListItemWrapper>
         <ListItemTitle>
           <H3>{title}</H3>
+          <Detail style={{ opacity: 0.8 }}>{props.roles.join(', ')}</Detail>
         </ListItemTitle>
         <ListItemDescription>
           <Paragraph>{description}</Paragraph>

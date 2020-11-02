@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Detail, Paragraph, SubTitle } from '../../../styles/styles';
+import { Detail, Paragraph } from '../../../styles/styles';
 import { Icon } from '../../Icons/Icons';
 
 export interface SkillI {

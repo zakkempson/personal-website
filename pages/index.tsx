@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import Link from 'next/link';
 import Date from '../components/date';
-import { Container, Paragraph, SubTitle, Title } from '../styles/styles';
+import { Container, Title } from '../styles/styles';
 import styled from 'styled-components';
 import React from 'react';
 import Intro from '../components/index/Intro';
@@ -65,6 +65,7 @@ export async function getStaticProps() {
 			coverImage {
 				url,
 			},
+			roles,
 		}
 	}
   `);
