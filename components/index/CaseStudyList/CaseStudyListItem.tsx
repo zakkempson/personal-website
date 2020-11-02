@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { Paragraph, SubTitle, Title } from '../../../styles/styles';
+import { Paragraph, H3 } from '../../../styles/styles';
 import styled from 'styled-components';
 
 export interface CaseStudyListItemI {
@@ -51,7 +51,7 @@ const CaseStudyListItem = (props: CaseStudyListItemI) => {
     <Link href={`/case-studies/${slug}`}>
       <ListItemWrapper>
         <ListItemTitle>
-          <SubTitle>{title}</SubTitle>
+          <H3>{title}</H3>
         </ListItemTitle>
         <ListItemDescription>
           <Paragraph>{description}</Paragraph>

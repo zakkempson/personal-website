@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Paragraph, SubTitle, Title } from '../../styles/styles';
+import { Paragraph, H3, Title } from '../../styles/styles';
 import Name from '../Name';
 
 const Intro = styled.section`
@@ -55,10 +55,10 @@ const IntroComponent = () => {
       </IntroLeft>
       <IntroRight>
         <IntoRightContent>
-          <SubTitle>
+          <H3>
             I’m a <strong>product designer</strong> with{' '}
             <strong>4 years</strong> of experience.
-          </SubTitle>
+          </H3>
           <Paragraph>
             Remarkable products pave the way to a better future, so I get stuck
             in and help bring them to life.

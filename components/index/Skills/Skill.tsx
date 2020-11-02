@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Detail, Paragraph, SubTitle } from '../../../styles/styles';
+import { Icon } from '../../Icons/Icons';
 
 export interface SkillI {
   title: string;
@@ -66,7 +67,9 @@ const Skill = (props: SkillI) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <Title isHovered={isHovered}>
-        <SubTitle>b</SubTitle>
+        <div style={{ marginRight: '1rem' }}>
+          <Icon name={props.icon} />
+        </div>
         <Paragraph>{props.title}</Paragraph>
       </Title>
       <Description isHovered={isHovered}>

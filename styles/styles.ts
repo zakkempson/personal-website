@@ -16,6 +16,18 @@ export interface TextI {
 export const SubTitle = styled.h2<TextI>`
   font-family: 'Work Sans', sans-serif;
   font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 60px;
+  color: ${(props) => (props.inverted ? 'white' : '#3a3441')};
+  margin-bottom: 1rem;
+
+  transition: color 0.1s ease-out;
+`;
+
+export const H3 = styled.h2<TextI>`
+  font-family: 'Work Sans', sans-serif;
+  font-style: normal;
   font-weight: 300;
   font-size: 32px;
   line-height: 38px;
