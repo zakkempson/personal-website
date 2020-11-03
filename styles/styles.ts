@@ -63,7 +63,12 @@ export const Detail = styled.p<TextI>`
   transition: color 0.1s ease-out;
 `;
 
-export const Container = styled.div`
-  max-width: 1300px;
+interface ContainerI {
+  width?: 'normal' | 'narrow';
+}
+
+export const Container = styled.div<ContainerI>`
+  max-width: ${(props) =>
+    !props.width || props.width === 'normal' ? '1300px' : '1000px'};
   margin: auto;
 `;

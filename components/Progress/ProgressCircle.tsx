@@ -16,12 +16,7 @@ const circumference = Math.PI * radius * 2;
 const ProgressCircle = (props: ProgressI) => {
   const position = Math.max(1 - props.progress, 0);
   return (
-    <SVG
-      viewBox='0 0 40 40'
-      width='80px'
-      height='80px'
-      className='circle-progress'
-    >
+    <SVG viewBox='0 0 40 40' width='80px' height='80px'>
       <circle
         stroke={props.color}
         fill='transparent'

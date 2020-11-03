@@ -1,7 +1,5 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
-import Link from 'next/link';
-import Date from '../components/date';
 import { Container, Title } from '../styles/styles';
 import styled from 'styled-components';
 import React from 'react';

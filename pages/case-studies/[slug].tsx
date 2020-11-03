@@ -2,10 +2,21 @@ import Head from 'next/head';
 import { GraphQLClient } from 'graphql-request';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { CaseStudyListItemI } from '../../components/index/CaseStudyList/CaseStudyListItem';
-import { SubTitle, Title } from '../../styles/styles';
+import {
+  Container,
+  Detail,
+  H3,
+  Paragraph,
+  SubTitle,
+  Title,
+} from '../../styles/styles';
 import styled from 'styled-components';
 import Progress from '../../components/Progress/Progress';
 import React from 'react';
+import Name from '../../components/Name';
+import { Date, DateDuration } from '../../components/date';
+import CaseStudySection from '../../components/CaseStudies/CaseStudySection';
+import ReactMarkdown from 'react-markdown';
 
 export interface BrandI {
   name: string;
@@ -25,6 +36,16 @@ export interface CaseStudyI {
   color: {
     hex: string;
   };
+  roles: string[];
+  startDate: string;
+  endDate: string;
+  problemText: string;
+  problemGallery: { url: string }[];
+  processText: string;
+  processGallery: { url: string }[];
+  outcomeText: string;
+  outcomeGallery: { url: string }[];
+  whatILearned: string;
 }
 
 type HeroProps = CaseStudyI['color'];
@@ -43,11 +64,27 @@ const TitleContainer = styled.div`
   max-width: 600px;
 `;
 
+const NameContainer = styled.div`
+  position: absolute;
+  left: 6%;
+  top: 12%;
+  width: 400px;
+  opacity: 0.2;
+`;
+
 const FeatureImage = styled.img`
   position: absolute;
   right: 0;
   bottom: 0;
   width: 50%;
+`;
+
+const Description = styled.div`
+  display: flex;
+`;
+
+const DescriptionItem = styled.div`
+  flex: 1;
 `;
 
 const CaseStudy = (props: CaseStudyI) => {
@@ -82,27 +119,58 @@ const CaseStudy = (props: CaseStudyI) => {
           <TitleContainer>
             <SubTitle inverted>{props.title}</SubTitle>
           </TitleContainer>
+          <NameContainer>
+            <Name inverted />
+          </NameContainer>
           <FeatureImage src={props.coverImage.url} />
         </Hero>
-        <Title>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure neque
-          unde officiis, corrupti quam repudiandae iusto tenetur quo eveniet
-          minus impedit illo fugit earum, quisquam ad, libero aliquid eligendi!
-          Enim.s
-        </Title>
-        <Title>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure neque
-          unde officiis, corrupti quam repudiandae iusto tenetur quo eveniet
-          minus impedit illo fugit earum, quisquam ad, libero aliquid eligendi!
-          Enim.s
-        </Title>
-        <Title>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure neque
-          unde officiis, corrupti quam repudiandae iusto tenetur quo eveniet
-          minus impedit illo fugit earum, quisquam ad, libero aliquid eligendi!
-          Enim.s
-        </Title>
-        {/* <div dangerouslySetInnerHTML={{ __html: props.contentHtml }} /> */}
+        <Container width={'narrow'} style={{ padding: '3rem 0 5rem 0' }}>
+          <Paragraph>{props.description}</Paragraph>
+          <Description style={{ marginTop: '2rem' }}>
+            <DescriptionItem>
+              <H3>My roles:</H3>
+              <Paragraph>{props.roles.join(', ')}</Paragraph>
+            </DescriptionItem>
+            <DescriptionItem>
+              <H3>Duration:</H3>
+              <Paragraph>
+                <DateDuration
+                  startDateString={props.startDate}
+                  endDateString={props.endDate}
+                />
+              </Paragraph>
+              <Detail style={{ opacity: 0.7 }}>
+                <i>
+                  (<Date dateString={props.startDate} specificity='month' /> -{' '}
+                  <Date dateString={props.endDate} specificity='month' />)
+                </i>
+              </Detail>
+            </DescriptionItem>
+          </Description>
+        </Container>
+        <div>
+          <CaseStudySection name='Problem' color={props.color.hex}>
+            <ReactMarkdown>{props.problemText}</ReactMarkdown>
+            {props.problemGallery?.map((p) => (
+              <img src={p.url} />
+            ))}
+          </CaseStudySection>
+          <CaseStudySection name='Process' color={props.color.hex}>
+            <ReactMarkdown>{props.processText}</ReactMarkdown>
+            {props.processGallery?.map((p) => (
+              <img src={p.url} />
+            ))}
+          </CaseStudySection>
+          <CaseStudySection name='Outcome' color={props.color.hex}>
+            <ReactMarkdown>{props.outcomeText}</ReactMarkdown>
+            {props.outcomeGallery?.map((p) => (
+              <img src={p.url} />
+            ))}
+          </CaseStudySection>
+          <CaseStudySection name='What I Learned' color={props.color.hex}>
+            <ReactMarkdown>{props.whatILearned}</ReactMarkdown>
+          </CaseStudySection>
+        </div>
       </article>
     </>
   );
@@ -147,7 +215,23 @@ export const getStaticProps: GetStaticProps = async (context) => {
 				},
 				color {
 					hex
-				}
+				},
+				roles,
+				startDate,
+				endDate,
+				problemText,
+				problemGallery {
+				  url
+				},
+				processText,
+				processGallery {
+					url
+				  },
+				outcomeText,
+				outcomeGallery {
+					url
+				  },
+				whatILearned,
 			}
 		}
 	  `);

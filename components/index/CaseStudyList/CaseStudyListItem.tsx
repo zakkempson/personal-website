@@ -2,16 +2,12 @@ import Link from 'next/link';
 import React from 'react';
 import { Paragraph, H3, Detail } from '../../../styles/styles';
 import styled from 'styled-components';
+import { CaseStudyI } from '../../../pages/case-studies/[slug]';
 
-export interface CaseStudyListItemI {
-  title: string;
-  slug: string;
-  description: string;
-  coverImage: {
-    url: string;
-  };
-  roles: string[];
-}
+export type CaseStudyListItemI = Pick<
+  CaseStudyI,
+  'title' | 'slug' | 'description' | 'coverImage' | 'roles'
+>;
 
 const ListItemWrapper = styled.div`
   display: flex;
