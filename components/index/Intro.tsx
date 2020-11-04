@@ -39,7 +39,7 @@ const IntroRight = styled.div`
 `;
 
 const IntoRightContent = styled.div`
-  max-width: 550px;
+  max-width: 580px;
 `;
 
 const IntroComponent = () => {
@@ -56,7 +56,7 @@ const IntroComponent = () => {
       <IntroRight>
         <IntoRightContent>
           <H3>
-            I’m a <strong>product designer</strong> with{' '}
+            I’m Zak Kempson, a <strong>product designer</strong> with{' '}
             <strong>4 years</strong> of experience.
           </H3>
           <Paragraph>

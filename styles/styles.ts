@@ -54,11 +54,13 @@ export const Detail = styled.p<TextI>`
   font-family: 'Work Sans', sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.3rem;
   color: #3a3441;
   color: ${(props) => (props.inverted ? 'white' : '#3a3441')};
   margin-bottom: 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
 
   transition: color 0.1s ease-out;
 `;

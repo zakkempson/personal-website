@@ -17,6 +17,10 @@ import Name from '../../components/Name';
 import { Date, DateDuration } from '../../components/date';
 import CaseStudySection from '../../components/CaseStudies/CaseStudySection';
 import ReactMarkdown from 'react-markdown';
+import Testimonial, {
+  TestimonialI,
+} from '../../components/Testimonial/Testimonial';
+import Footer from '../../components/Footer';
 
 export interface BrandI {
   name: string;
@@ -46,6 +50,7 @@ export interface CaseStudyI {
   outcomeText: string;
   outcomeGallery: { url: string }[];
   whatILearned: string;
+  testimonial?: TestimonialI;
 }
 
 type HeroProps = CaseStudyI['color'];
@@ -171,7 +176,11 @@ const CaseStudy = (props: CaseStudyI) => {
             <ReactMarkdown>{props.whatILearned}</ReactMarkdown>
           </CaseStudySection>
         </div>
+        <Container>
+          <Testimonial {...props.testimonial} />
+        </Container>
       </article>
+      <Footer />
     </>
   );
 };
@@ -232,6 +241,22 @@ export const getStaticProps: GetStaticProps = async (context) => {
 					url
 				  },
 				whatILearned,
+				testimonial {
+					name,
+					description,
+					role,
+					brand {
+						name
+							logo {
+						url
+						},
+					},
+					linkedInUrl,
+					twitterUrl,
+					avatar {
+						url,
+					}
+				}
 			}
 		}
 	  `);

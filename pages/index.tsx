@@ -7,6 +7,7 @@ import Intro from '../components/index/Intro';
 import Skills from '../components/index/Skills/Skills';
 import { GraphQLClient } from 'graphql-request';
 import CaseStudyList from '../components/index/CaseStudyList/CaseStudyList';
+import Footer from '../components/Footer';
 
 export default function Home({ caseStudies }) {
   return (
@@ -47,6 +48,7 @@ export default function Home({ caseStudies }) {
           ))}
         </ul>
       </section> */}
+      <Footer />
     </Layout>
   );
 }

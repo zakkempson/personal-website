@@ -1,14 +1,30 @@
 import React from 'react';
 
-interface ExitI {
+interface IconInstanceI {
   size?: 'small' | 'medium';
 }
 
 interface IconI {
   name: 'research' | 'business' | 'design' | 'build';
+  size?: 'small' | 'medium';
 }
 
-export const Exit = (props: ExitI) => {
+export const Icon = (props: IconI) => {
+  switch (props.name) {
+    case 'research':
+      return <Research />;
+    case 'business':
+      return <Business />;
+    case 'design':
+      return <Design />;
+    case 'build':
+      return <Build />;
+    default:
+      return null;
+  }
+};
+
+export const Exit = (props: IconInstanceI) => {
   const { size = 'small' } = props;
 
   return (
@@ -42,22 +58,7 @@ export const Exit = (props: ExitI) => {
   );
 };
 
-export const Icon = (props: IconI) => {
-  switch (props.name) {
-    case 'research':
-      return <Research />;
-    case 'business':
-      return <Business />;
-    case 'design':
-      return <Design />;
-    case 'build':
-      return <Build />;
-    default:
-      return null;
-  }
-};
-
-export const Research = (props: ExitI) => {
+export const Research = (props: IconInstanceI) => {
   return (
     <svg
       width='44'
@@ -82,7 +83,7 @@ export const Research = (props: ExitI) => {
   );
 };
 
-export const Business = (props: ExitI) => {
+export const Business = (props: IconInstanceI) => {
   return (
     <svg
       width='27'
@@ -99,7 +100,7 @@ export const Business = (props: ExitI) => {
   );
 };
 
-export const Design = (props: ExitI) => {
+export const Design = (props: IconInstanceI) => {
   return (
     <svg
       width='42'
@@ -124,7 +125,7 @@ export const Design = (props: ExitI) => {
   );
 };
 
-export const Build = (props: ExitI) => {
+export const Build = (props: IconInstanceI) => {
   return (
     <svg
       width='60'
