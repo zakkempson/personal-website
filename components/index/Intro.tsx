@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Paragraph, H3, Title } from '../../styles/styles';
+import Button from '../Button/Button';
+import Wave from '../Button/Wave';
 import Name from '../Name';
 
 const Intro = styled.section`
@@ -67,6 +69,12 @@ const IntroComponent = () => {
             Along the way I’ve started a company, lead product teams and created
             successful user interfaces for businesses and customers.
           </Paragraph>
+          <div style={{ paddingTop: '1rem' }}>
+            <Button onClick={() => window.$crisp.push(['do', 'chat:open'])}>
+              <Wave />
+              Send a message
+            </Button>
+          </div>
         </IntoRightContent>
       </IntroRight>
     </Intro>

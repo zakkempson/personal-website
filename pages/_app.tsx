@@ -1,9 +1,31 @@
 import { AppProps } from 'next/dist/next-server/lib/router/router';
 import '../styles/global.css';
-import { useRouter } from 'next/router';
 import React from 'react';
 
+declare global {
+  interface Window {
+    $crisp: string[][];
+    CRISP_WEBSITE_ID: string;
+  }
+}
+
 const App = ({ Component, pageProps }: AppProps) => {
+  React.useEffect(() => {
+    if (window) {
+      window.$crisp = [];
+      window.CRISP_WEBSITE_ID = process.env.CRISP_ID;
+
+      const initialize = () => {
+        const d = document;
+        const s = d.createElement('script');
+        s.src = 'https://client.crisp.chat/l.js';
+        s.async = true;
+        d.getElementsByTagName('head')[0].appendChild(s);
+      };
+
+      initialize();
+    }
+  }, []);
   //   const [scrollMemories, setScrollMemories] = React.useState<{
   //     [asPath: string]: number;
   //   }>({});

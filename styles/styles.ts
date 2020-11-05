@@ -73,4 +73,5 @@ export const Container = styled.div<ContainerI>`
   max-width: ${(props) =>
     !props.width || props.width === 'normal' ? '1300px' : '1000px'};
   margin: auto;
+  padding: 0 1rem;
 `;

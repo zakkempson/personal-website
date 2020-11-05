@@ -8,7 +8,6 @@ import {
   H3,
   Paragraph,
   SubTitle,
-  Title,
 } from '../../styles/styles';
 import styled from 'styled-components';
 import Progress from '../../components/Progress/Progress';

@@ -1,18 +1,29 @@
 import { ReactNode } from 'react';
+import styled from 'styled-components';
 
 interface SocialIconI {
   name: 'github' | 'twitter' | 'linkedin';
   url?: string;
 }
 
+const Link = styled.a`
+  margin-right: 10px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-out;
+
+  &:hover {
+    opacity: 1;
+  }
+`;
+
 const SocialIconWrapper = (props: SocialIconI & { children: ReactNode }) => (
-  <a
+  <Link
     href={props.url || ''}
     target='__blank'
-    style={{ cursor: props.url ? 'pointer' : 'inherit', marginRight: '10px' }}
+    style={{ cursor: props.url ? 'pointer' : 'inherit' }}
   >
     {props.children}
-  </a>
+  </Link>
 );
 
 export const SocialIcon = (props: SocialIconI) => {
@@ -86,8 +97,8 @@ export const LinkedIn = () => {
       xmlns='http://www.w3.org/2000/svg'
     >
       <path
-        fill-rule='evenodd'
-        clip-rule='evenodd'
+        fillRule='evenodd'
+        clipRule='evenodd'
         d='M13.365 24.73C19.6417 24.73 24.73 19.6417 24.73 13.365C24.73 7.08828 19.6417 2 13.365 2C7.08828 2 2 7.08828 2 13.365C2 19.6417 7.08828 24.73 13.365 24.73ZM10.0812 10.4543V19.7892H7.11541V10.4543H10.0812ZM10.2767 7.56647C10.2767 8.46225 9.63294 9.17906 8.59871 9.17906H8.57935C7.58403 9.17906 6.94043 8.46229 6.94043 7.56647C6.94043 6.65051 7.60384 5.95358 8.61833 5.95358C9.63298 5.95358 10.2574 6.6505 10.2767 7.56647ZM14.6886 19.7892H11.7228C11.7228 19.7892 11.7618 11.3301 11.7229 10.4542H14.6887V11.7759C15.0829 11.1398 15.7883 10.2352 17.3616 10.2352C19.3129 10.2352 20.7761 11.5693 20.7761 14.4366V19.7892H17.8105V14.7952C17.8105 13.5403 17.3811 12.6843 16.3079 12.6843C15.4886 12.6843 15.0006 13.2616 14.7862 13.819C14.7079 14.0185 14.6886 14.2972 14.6886 14.5762V19.7892Z'
         fill='#3A3441'
       />

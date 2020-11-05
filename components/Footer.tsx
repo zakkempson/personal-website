@@ -3,10 +3,11 @@ import { Detail, H3 } from '../styles/styles';
 import styled from 'styled-components';
 import Name from './Name';
 import { SocialIcon } from './Icons/SocialIcons';
+import Button from './Button/Button';
+import Wave from './Button/Wave';
 
 const LogoWrapper = styled.div`
   padding: 7rem 0;
-  margin-top: 4rem;
   display: flex;
   justify-content: space-between;
   border-top: 1px solid #eeeeee;
@@ -59,6 +60,10 @@ const Footer = () => {
                 name='linkedin'
                 url='https://www.linkedin.com/in/zak-kempson/'
               />
+              <Button onClick={() => window.$crisp.push(['do', 'chat:open'])}>
+                <Wave />
+                Send a message
+              </Button>
             </Icons>
           </div>
         </LogoRight>
