@@ -155,20 +155,20 @@ const CaseStudy = (props: CaseStudyI) => {
         <div>
           <CaseStudySection name='Problem' color={props.color.hex}>
             <ReactMarkdown>{props.problemText}</ReactMarkdown>
-            {props.problemGallery?.map((p) => (
-              <img src={p.url} />
+            {props.problemGallery?.map((p, i) => (
+              <img src={p.url} key={i} />
             ))}
           </CaseStudySection>
           <CaseStudySection name='Process' color={props.color.hex}>
             <ReactMarkdown>{props.processText}</ReactMarkdown>
-            {props.processGallery?.map((p) => (
-              <img src={p.url} />
+            {props.processGallery?.map((p, i) => (
+              <img src={p.url} key={i} />
             ))}
           </CaseStudySection>
           <CaseStudySection name='Outcome' color={props.color.hex}>
             <ReactMarkdown>{props.outcomeText}</ReactMarkdown>
-            {props.outcomeGallery?.map((p) => (
-              <img src={p.url} />
+            {props.outcomeGallery?.map((p, i) => (
+              <img src={p.url} key={i} />
             ))}
           </CaseStudySection>
           <CaseStudySection name='What I Learned' color={props.color.hex}>

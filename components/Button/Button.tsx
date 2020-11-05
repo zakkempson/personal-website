@@ -6,14 +6,22 @@ interface ButtonI {
   url?: string;
   children: ReactNode;
   onClick?: VoidFunction;
+  secondary?: boolean;
 }
 
-const StyledButton = styled.button`
-  padding: 4px 10px;
+type StyledButtonI = Pick<ButtonI, 'secondary'>;
+
+const StyledButton = styled.button<StyledButtonI>`
+  padding: ${(props) => (props.secondary ? '8px 0px' : '8px 12px')};
   cursor: pointer;
   background: none;
   border: none;
+  box-shadow: ${(props) =>
+    props.secondary ? 'none' : 'inset 0px 0px 0px 1px #ff9e52'};
   white-space: nowrap;
+  display: flex;
+  box-sizing: border-box;
+  transform: ${(props) => (props.secondary ? 'scale(0.9)' : 'none')};
 
   transition: $animate;
   position: relative;
@@ -29,10 +37,10 @@ const StyledButton = styled.button`
     left: 0;
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: -3px;
     width: 0px;
-    height: 4px;
-    margin: 5px 10px 0px 10px;
+    height: 3px;
+    margin: 5px 0px 0px 0px;
     z-index: 10;
     transition: all 0.3s ease-out;
     background-color: #ff9e52;
@@ -41,7 +49,7 @@ const StyledButton = styled.button`
   &:hover {
     &:before,
     &:after {
-      width: 107%;
+      width: 100%;
       opacity: 1;
     }
   }
@@ -66,7 +74,9 @@ const Button = (props: ButtonI) => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <StyledButton>{props.children}</StyledButton>
+        <StyledButton secondary={props.secondary}>
+          {props.children}
+        </StyledButton>
       </a>
     </ButtonContext.Provider>
   );

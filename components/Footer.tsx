@@ -32,6 +32,7 @@ const LogoRight = styled.div`
 
 const Icons = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 const Copy = styled.div`
@@ -60,7 +61,10 @@ const Footer = () => {
                 name='linkedin'
                 url='https://www.linkedin.com/in/zak-kempson/'
               />
-              <Button onClick={() => window.$crisp.push(['do', 'chat:open'])}>
+              <Button
+                onClick={() => window.$crisp.push(['do', 'chat:open'])}
+                secondary
+              >
                 <Wave />
                 <Paragraph style={{ margin: '0' }}>Send a message</Paragraph>
               </Button>

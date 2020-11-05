@@ -70,7 +70,10 @@ const IntroComponent = () => {
             successful user interfaces for businesses and customers.
           </Paragraph>
           <div style={{ paddingTop: '1rem' }}>
-            <Button onClick={() => window.$crisp.push(['do', 'chat:open'])}>
+            <Button
+              onClick={() => window.$crisp.push(['do', 'chat:open'])}
+              secondary
+            >
               <Wave />
               <Paragraph style={{ margin: '0' }}>Send a message</Paragraph>
             </Button>

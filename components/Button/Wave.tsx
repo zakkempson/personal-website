@@ -8,7 +8,6 @@ interface WaveWrapperI {
 
 const WaveWrapper = styled.div<WaveWrapperI>`
   margin-right: 8px;
-  float: left;
   font-size: 1.4rem;
   transform: rotate(-40deg);
 
