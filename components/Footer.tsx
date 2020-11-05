@@ -1,5 +1,5 @@
 import React from 'react';
-import { Detail, H3 } from '../styles/styles';
+import { Detail, H3, Paragraph } from '../styles/styles';
 import styled from 'styled-components';
 import Name from './Name';
 import { SocialIcon } from './Icons/SocialIcons';
@@ -62,7 +62,7 @@ const Footer = () => {
               />
               <Button onClick={() => window.$crisp.push(['do', 'chat:open'])}>
                 <Wave />
-                Send a message
+                <Paragraph style={{ margin: '0' }}>Send a message</Paragraph>
               </Button>
             </Icons>
           </div>

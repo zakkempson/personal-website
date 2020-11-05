@@ -13,6 +13,7 @@ const StyledButton = styled.button`
   cursor: pointer;
   background: none;
   border: none;
+  white-space: nowrap;
 
   transition: $animate;
   position: relative;
@@ -40,7 +41,7 @@ const StyledButton = styled.button`
   &:hover {
     &:before,
     &:after {
-      width: 92%;
+      width: 107%;
       opacity: 1;
     }
   }
@@ -65,9 +66,7 @@ const Button = (props: ButtonI) => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <StyledButton>
-          <Paragraph style={{ margin: '0' }}>{props.children}</Paragraph>
-        </StyledButton>
+        <StyledButton>{props.children}</StyledButton>
       </a>
     </ButtonContext.Provider>
   );

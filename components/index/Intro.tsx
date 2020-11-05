@@ -72,7 +72,7 @@ const IntroComponent = () => {
           <div style={{ paddingTop: '1rem' }}>
             <Button onClick={() => window.$crisp.push(['do', 'chat:open'])}>
               <Wave />
-              Send a message
+              <Paragraph style={{ margin: '0' }}>Send a message</Paragraph>
             </Button>
           </div>
         </IntoRightContent>

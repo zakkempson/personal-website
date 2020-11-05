@@ -13,7 +13,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   React.useEffect(() => {
     if (window) {
       window.$crisp = [];
-      window.CRISP_WEBSITE_ID = process.env.CRISP_ID;
+      window.CRISP_WEBSITE_ID = process.env.NEXT_PUBLIC_CRISP_ID;
 
       const initialize = () => {
         const d = document;
@@ -26,6 +26,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       initialize();
     }
   }, []);
+
   //   const [scrollMemories, setScrollMemories] = React.useState<{
   //     [asPath: string]: number;
   //   }>({});
