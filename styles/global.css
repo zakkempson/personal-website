@@ -53,6 +53,11 @@ li {
   margin-bottom: 0.4rem;
 }
 
+.testimonial p {
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+}
+
 ul {
   padding: 0rem 0 2rem 2rem;
 }

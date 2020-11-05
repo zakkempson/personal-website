@@ -11,6 +11,11 @@ export const Title = styled.h1`
 
 export interface TextI {
   inverted?: boolean;
+  compact?: boolean;
+}
+
+interface Paragraph extends TextI {
+  size?: 'small' | 'medium' | 'large';
 }
 
 export const SubTitle = styled.h2<TextI>`
@@ -25,25 +30,36 @@ export const SubTitle = styled.h2<TextI>`
   transition: color 0.1s ease-out;
 `;
 
-export const H3 = styled.h2<TextI>`
+export const H3 = styled.h3<TextI>`
   font-family: 'Work Sans', sans-serif;
-  font-style: normal;
   font-weight: 300;
-  font-size: 32px;
+  font-size: 30px;
   line-height: 38px;
   color: ${(props) => (props.inverted ? 'white' : '#3a3441')};
-  margin-bottom: 1rem;
+  margin-bottom: ${(props) => (props.compact ? '0.2rem' : '1rem')};
+  letter-spacing: 0.08rem;
 
   transition: color 0.1s ease-out;
 `;
 
-export const Paragraph = styled.p<TextI>`
+export const Paragraph = styled.p<Paragraph>`
   font-family: 'Work Sans', sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 1.2rem;
-  line-height: 1.8rem;
-  color: #3a3441;
+  font-size: ${(props) =>
+    !props.size || props.size === 'medium'
+      ? '1.2rem'
+      : props.size === 'small'
+      ? '1rem'
+      : '1.4rem'};
+  line-height: ${(props) =>
+    !props.size || props.size === 'medium'
+      ? '1.8rem'
+      : props.size === 'small'
+      ? '1.2rem'
+      : '2.6rem'};
+  letter-spacing: ${(props) =>
+    props.size === 'large' ? '0.06rem' : 'inherit'};
   color: ${(props) => (props.inverted ? 'white' : '#3a3441')};
   margin-bottom: 0.4rem;
 

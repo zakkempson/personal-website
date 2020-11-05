@@ -176,7 +176,7 @@ const CaseStudy = (props: CaseStudyI) => {
           </CaseStudySection>
         </div>
         <Container>
-          <Testimonial {...props.testimonial} />
+          <Testimonial {...props.testimonial} color={props.color.hex} />
         </Container>
       </article>
       <Footer />

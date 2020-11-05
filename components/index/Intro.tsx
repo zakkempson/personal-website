@@ -53,7 +53,7 @@ const IntroComponent = () => {
           <Title> Hey, i'm</Title>
           <Name />
         </IntroName>
-        <ZakImage src='/images/zak.png' alt={`Picture of Zak's ugly face`} />
+        <ZakImage src='/images/zak.png' alt={`Picture of Zak`} />
       </IntroLeft>
       <IntroRight>
         <IntoRightContent>

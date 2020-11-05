@@ -14,10 +14,6 @@ export default function Home({ caseStudies }) {
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;700&display=swap'
-          rel='stylesheet'
-        />
       </Head>
       <Intro />
       <Skills />
