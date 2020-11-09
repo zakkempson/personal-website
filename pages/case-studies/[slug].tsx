@@ -22,6 +22,8 @@ import Testimonial, {
 import Footer from '../../components/Footer';
 import ContactSection from '../../components/Contact/ContactSection';
 import PrototypeLink from '../../components/CaseStudies/PrototypeLink/PrototypeLink';
+import GalleryImage from '../../components/CaseStudies/GalleryImage';
+import Gallery from '../../components/CaseStudies/Gallery';
 
 export interface BrandI {
   name: string;
@@ -179,10 +181,12 @@ const CaseStudy = (props: CaseStudyI) => {
             <ReactMarkdown allowDangerousHtml>
               {props.processText}
             </ReactMarkdown>
-            <PrototypeLink {...props} />
-            {props.processGallery?.map((p, i) => (
-              <img src={p.url} key={i} />
-            ))}
+            <Gallery>
+              <PrototypeLink {...props} />
+              {props.processGallery?.map((p, i) => (
+                <GalleryImage src={p.url} key={i} />
+              ))}
+            </Gallery>
           </CaseStudySection>
           <CaseStudySection name='Build' color={props.color.hex}>
             <ReactMarkdown allowDangerousHtml>{props.buildText}</ReactMarkdown>

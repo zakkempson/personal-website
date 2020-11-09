@@ -2,7 +2,7 @@ import React from 'react';
 import { CaseStudyI } from '../../../pages/case-studies/[slug]';
 import styled from 'styled-components';
 import { Icon } from '../../Icons/Icons';
-import { H3, Paragraph } from '../../../styles/styles';
+import { Paragraph } from '../../../styles/styles';
 
 type PrototypeLinkI = Pick<
   CaseStudyI,
@@ -10,12 +10,12 @@ type PrototypeLinkI = Pick<
 >;
 
 const Wrapper = styled.a<PrototypeLinkI>`
-  max-width: 370px;
-  height: 250px;
+  flex: 1;
+  max-height: 300px;
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
     url(${(props) => props.processPrototypeThumbnail?.url});
   background-size: cover;
-  border-radius: 10px;
+  border-radius: 4px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -24,6 +24,8 @@ const Wrapper = styled.a<PrototypeLinkI>`
   text-align: center;
   text-decoration: none;
   cursor: ${(props) => (props.processPrototypeURL ? 'pointer' : 'inherit')};
+  box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.3);
+  margin: 0.4rem;
 
   &:hover {
     box-shadow: 0px 3px 15px 2px rgba(0, 0, 0, 0.3);
