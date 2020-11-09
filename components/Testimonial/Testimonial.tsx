@@ -24,7 +24,7 @@ interface TestimonialsContentI {
 
 const TestimonialWrapper = styled.div`
   display: flex;
-  padding: 3rem;
+  padding-bottom: 3rem;
 `;
 
 const TestiomonialContent = styled.div<TestimonialsContentI>`
@@ -62,7 +62,7 @@ const Testimonial = (props: TestimonialI) => {
         <QuotationMark color={props.color} />
       </div>
       <TestiomonialContent color={props.color}>
-        <ReactMarkdown allowDangerousHtml className='testimonial'>
+        <ReactMarkdown allowDangerousHtml className='testimonial markdown'>
           {props.description}
         </ReactMarkdown>
         <AvatarWrapper>

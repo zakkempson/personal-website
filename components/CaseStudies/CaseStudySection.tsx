@@ -12,7 +12,7 @@ type NameI = Pick<CaseStudySectionI, 'color'>;
 
 const Wrapper = styled.div`
   display: flex;
-  padding-bottom: 4rem;
+  padding-bottom: 5rem;
 `;
 
 const Name = styled.div<NameI>`

@@ -57,7 +57,7 @@ export const Paragraph = styled.p<Paragraph>`
       ? '1.8rem'
       : props.size === 'small'
       ? '1.2rem'
-      : '2.6rem'};
+      : '2.2rem'};
   letter-spacing: ${(props) =>
     props.size === 'large' ? '0.06rem' : 'inherit'};
   color: ${(props) => (props.inverted ? 'white' : '#3a3441')};

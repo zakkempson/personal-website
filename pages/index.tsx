@@ -63,6 +63,9 @@ export async function getStaticProps() {
 				url,
 			},
 			roles,
+			color {
+				hex
+			},
 		}
 	}
   `);

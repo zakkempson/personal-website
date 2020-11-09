@@ -73,7 +73,7 @@ const Skill = (props: SkillI) => {
         <Paragraph>{props.title}</Paragraph>
       </Title>
       <Description isHovered={isHovered}>
-        <Detail>{props.description}</Detail>
+        <Paragraph size='small'>{props.description}</Paragraph>
       </Description>
     </Wrapper>
   );

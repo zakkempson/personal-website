@@ -18,8 +18,8 @@ h2 {
   font-weight: 600;
   font-size: 48px;
   line-height: 60px;
-  color: '#3a3441';
-  margin-bottom: 1rem;
+  color: #3a3441;
+  margin-bottom: 2rem;
 }
 
 h3 {
@@ -28,7 +28,7 @@ h3 {
   font-weight: 300;
   font-size: 32px;
   line-height: 38px;
-  color: '#3a3441';
+  color: #3a3441;
   margin-bottom: 1rem;
 }
 
@@ -38,7 +38,7 @@ h4 {
   font-weight: 400;
   font-size: 28px;
   line-height: 34px;
-  color: '#3a3441';
+  color: #3a3441;
   margin-bottom: 2rem;
 }
 
@@ -49,8 +49,8 @@ li {
   font-weight: 300;
   font-size: 1.2rem;
   line-height: 1.8rem;
-  color: '#3a3441';
-  margin-bottom: 0.4rem;
+  color: #3a3441;
+  margin-bottom: 1rem;
 }
 
 .testimonial p {
@@ -58,10 +58,16 @@ li {
   line-height: 2.6rem;
 }
 
-ul {
+ul,
+ol {
   padding: 0rem 0 2rem 2rem;
 }
 
 li {
   padding-bottom: 1rem;
+}
+
+hr {
+  color: #3a3441;
+  opacity: 0.3;
 }

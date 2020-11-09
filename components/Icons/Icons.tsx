@@ -5,7 +5,7 @@ interface IconInstanceI {
 }
 
 interface IconI {
-  name: 'research' | 'business' | 'design' | 'build';
+  name: 'research' | 'business' | 'design' | 'build' | 'play';
   size?: 'small' | 'medium';
 }
 
@@ -19,6 +19,8 @@ export const Icon = (props: IconI) => {
       return <Design />;
     case 'build':
       return <Build />;
+    case 'play':
+      return <Play />;
     default:
       return null;
   }
@@ -139,6 +141,25 @@ export const Build = (props: IconInstanceI) => {
         fill='#3A3441'
         stroke='#3A3441'
         strokeWidth='0.4'
+      />
+    </svg>
+  );
+};
+
+export const Play = (props: IconInstanceI) => {
+  return (
+    <svg
+      width='100'
+      height='100'
+      viewBox='0 0 152 152'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+    >
+      <path
+        fillRule='evenodd'
+        clipRule='evenodd'
+        d='M102.638 76.0032L47.5 44.0167V107.99L102.638 76.0032ZM110.162 69.3912C111.327 70.058 112.295 71.0207 112.968 72.1817C113.641 73.3428 113.995 74.6611 113.995 76.0032C113.995 77.3453 113.641 78.6636 112.968 79.8246C112.295 80.9857 111.327 81.9484 110.162 82.6152L49.7135 117.689C44.7735 120.558 38 117.281 38 111.077V40.9292C38 34.7257 44.7735 31.4482 49.7135 34.3172L110.162 69.3912Z'
+        fill='white'
       />
     </svg>
   );

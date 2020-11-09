@@ -6,8 +6,12 @@ import { CaseStudyI } from '../../../pages/case-studies/[slug]';
 
 export type CaseStudyListItemI = Pick<
   CaseStudyI,
-  'title' | 'slug' | 'description' | 'coverImage' | 'roles'
+  'title' | 'slug' | 'description' | 'coverImage' | 'roles' | 'color'
 >;
+
+interface ListItemImageI {
+  color: string;
+}
 
 const ListItemWrapper = styled.div`
   display: flex;
@@ -33,9 +37,14 @@ const ListItemDescription = styled.div`
   flex: 1;
 `;
 
-const ListItemImage = styled.div`
+const ListItemImage = styled.div<ListItemImageI>`
   flex: 1;
-  padding-left: 1rem;
+  margin: 0rem 1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${(props) => props.color};
 `;
 
 const FeatureImage = styled.img`
@@ -45,7 +54,7 @@ const FeatureImage = styled.img`
 `;
 
 const CaseStudyListItem = (props: CaseStudyListItemI) => {
-  const { title, slug, description, coverImage } = props;
+  const { title, slug, description, coverImage, color } = props;
 
   return (
     <Link href={`/case-studies/${slug}`}>
@@ -57,7 +66,7 @@ const CaseStudyListItem = (props: CaseStudyListItemI) => {
         <ListItemDescription>
           <Paragraph>{description}</Paragraph>
         </ListItemDescription>
-        <ListItemImage>
+        <ListItemImage color={color?.hex}>
           <FeatureImage src={coverImage?.url} alt='Cover image' />
         </ListItemImage>
       </ListItemWrapper>
