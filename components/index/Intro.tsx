@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ResponsiveContext } from '../../pages/_app';
 import { Paragraph, H3, Title } from '../../styles/styles';
 import Button from '../Button/Button';
 import Wave from '../Button/Wave';
@@ -7,7 +8,9 @@ import Name from '../Name';
 
 const Intro = styled.section`
   display: flex;
-  height: 60vh;
+  flex-wrap: wrap;
+  min-height: 60vh;
+  padding: 1rem 1rem 0 1rem;
 `;
 
 const IntroLeft = styled.div`
@@ -15,6 +18,16 @@ const IntroLeft = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+  min-height: 60vh;
+
+  @media (max-width: 630px) {
+    align-items: start;
+    flex-basis: 100%;
+  }
+
+  @media (max-width: 500px) {
+    min-height: 90vw;
+  }
 `;
 
 const Spacer = styled.div`
@@ -32,6 +45,16 @@ const ZakImage = styled.img`
   left: 60%;
   z-index: -1;
   width: 230px;
+  max-width: 230px;
+
+  @media (max-width: 630px) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @media (max-width: 600px) {
+    width: 45%;
+  }
 `;
 
 const IntroRight = styled.div`
@@ -45,10 +68,12 @@ const IntoRightContent = styled.div`
 `;
 
 const IntroComponent = () => {
+  const { isMobile } = React.useContext(ResponsiveContext);
+
   return (
     <Intro>
       <IntroLeft>
-        <Spacer />
+        {!isMobile && <Spacer />}
         <IntroName>
           <Title> Hey, i'm</Title>
           <Name />
@@ -73,6 +98,7 @@ const IntroComponent = () => {
             <Button
               onClick={() => window.$crisp.push(['do', 'chat:open'])}
               secondary
+              fluid={isMobile}
             >
               <Wave />
               <Paragraph style={{ margin: '0' }}>Send a message</Paragraph>

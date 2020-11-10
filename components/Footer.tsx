@@ -9,8 +9,13 @@ import Wave from './Button/Wave';
 const LogoWrapper = styled.div`
   padding: 7rem 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   border-top: 1px solid #eeeeee;
+
+  @media (max-width: 630px) {
+    padding: 4rem 0;
+  }
 `;
 
 const LogoLeft = styled.div`
@@ -19,8 +24,11 @@ const LogoLeft = styled.div`
   align-items: center;
   justify-content: flex-end;
   border-right: 1px solid #eeeeee;
-  text-align: right;
   padding: 1rem;
+
+  @media (max-width: 630px) {
+    justify-content: center;
+  }
 `;
 
 const LogoRight = styled.div`
@@ -28,16 +36,27 @@ const LogoRight = styled.div`
   display: flex;
   align-items: center;
   padding: 1rem;
+
+  @media (max-width: 630px) {
+    text-align: center;
+    flex-basis: 100%;
+  }
 `;
 
 const Icons = styled.div`
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 630px) {
+    justify-content: center;
+  }
 `;
 
 const Copy = styled.div`
   text-align: center;
   padding: 0.4rem 0;
+  opacity: 0.6;
 `;
 
 const Footer = () => {
@@ -50,7 +69,7 @@ const Footer = () => {
           </div>
         </LogoLeft>
         <LogoRight>
-          <div>
+          <div style={{ width: '100%' }}>
             <div>
               <H3>Zak Kempson</H3>
             </div>
@@ -73,7 +92,7 @@ const Footer = () => {
         </LogoRight>
       </LogoWrapper>
       <Copy>
-        <Detail>© {new Date().getFullYear()} Zak Kempson</Detail>
+        <Detail>© Zak Kempson {new Date().getFullYear()}</Detail>
       </Copy>
     </div>
   );

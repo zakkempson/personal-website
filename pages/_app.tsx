@@ -1,6 +1,7 @@
 import { AppProps } from 'next/dist/next-server/lib/router/router';
 import '../styles/global.css';
 import React from 'react';
+import { useWindowSize } from '../hooks/useWindowSize';
 
 declare global {
   interface Window {
@@ -9,7 +10,15 @@ declare global {
   }
 }
 
+export const ResponsiveContext = React.createContext({
+  width: 0,
+  height: 0,
+  isMobile: false,
+  isTablet: false,
+});
+
 const App = ({ Component, pageProps }: AppProps) => {
+  const windowSize = useWindowSize();
   React.useEffect(() => {
     if (window) {
       window.$crisp = [];
@@ -83,7 +92,11 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   //     setIsPop(false);
   //   }, [Component]);
-  return <Component {...pageProps} />;
+  return (
+    <ResponsiveContext.Provider value={windowSize}>
+      <Component {...pageProps} />
+    </ResponsiveContext.Provider>
+  );
 };
 
 export default App;

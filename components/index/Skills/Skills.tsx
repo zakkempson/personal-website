@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useWindowSize } from '../../../hooks/useWindowSize';
 import Skill, { SkillI } from './Skill';
 
 const Wrapper = styled.div`
@@ -35,6 +36,12 @@ const skills: SkillI[] = [
 ];
 
 const Skills = () => {
+  const { isMobile } = useWindowSize();
+
+  if (isMobile) {
+    return null;
+  }
+
   return (
     <Wrapper>
       {skills.map((skill) => (

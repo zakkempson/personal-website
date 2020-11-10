@@ -9,6 +9,14 @@ const Wrapper = styled.section`
   border-top: 1px solid #eeeeee;
 `;
 
+const TextWrapper = styled.div`
+  flex: 2;
+
+  @media (max-width: 630px) {
+    flex-basis: 100%;
+  }
+`;
+
 const Highlight = styled.strong`
   color: #ff9e52;
 `;
@@ -18,13 +26,14 @@ const C2AWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem 0;
 `;
 
 const ContactSection = () => {
   return (
     <Wrapper>
-      <Container style={{ display: 'flex' }}>
-        <div style={{ flex: 2 }}>
+      <Container style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <TextWrapper>
           <H3>
             <strong>Need design help?</strong> Fellow designer just dropping by?
             (hi!) <strong>Founder building something cool?</strong> Spotted a
@@ -32,7 +41,7 @@ const ContactSection = () => {
             <br />
             <Highlight>I’d love to hear from you.</Highlight>
           </H3>
-        </div>
+        </TextWrapper>
         <C2AWrapper>
           <Button onClick={() => window.$crisp.push(['do', 'chat:open'])}>
             <Wave />

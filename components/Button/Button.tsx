@@ -1,18 +1,19 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
-import { Paragraph } from '../../styles/styles';
 
 interface ButtonI {
   url?: string;
   children: ReactNode;
   onClick?: VoidFunction;
   secondary?: boolean;
+  fluid?: boolean;
 }
 
-type StyledButtonI = Pick<ButtonI, 'secondary'>;
+type StyledButtonI = Pick<ButtonI, 'secondary' | 'fluid'>;
 
 const StyledButton = styled.button<StyledButtonI>`
   padding: ${(props) => (props.secondary ? '8px 0px' : '8px 12px')};
+  width: ${(props) => (props.fluid ? '100%' : 'auto')};
   cursor: pointer;
   background: none;
   border: none;
@@ -20,6 +21,7 @@ const StyledButton = styled.button<StyledButtonI>`
     props.secondary ? 'none' : 'inset 0px 0px 0px 1px #ff9e52'};
   white-space: nowrap;
   display: flex;
+  justify-content: center;
   box-sizing: border-box;
   transform: ${(props) => (props.secondary ? 'scale(0.9)' : 'none')};
 
@@ -74,9 +76,7 @@ const Button = (props: ButtonI) => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <StyledButton secondary={props.secondary}>
-          {props.children}
-        </StyledButton>
+        <StyledButton {...props}>{props.children}</StyledButton>
       </a>
     </ButtonContext.Provider>
   );

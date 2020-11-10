@@ -7,6 +7,10 @@ export const Title = styled.h1`
   font-size: 80px;
   color: #3a3441;
   margin: 0;
+
+  @media (max-width: 630px) {
+    font-size: 50px;
+  }
 `;
 
 export interface TextI {
@@ -28,6 +32,10 @@ export const SubTitle = styled.h2<TextI>`
   margin-bottom: 1rem;
 
   transition: color 0.1s ease-out;
+
+  @media (max-width: 630px) {
+    font-size: 38px;
+  }
 `;
 
 export const H3 = styled.h3<TextI>`
@@ -40,6 +48,11 @@ export const H3 = styled.h3<TextI>`
   letter-spacing: 0.08rem;
 
   transition: color 0.1s ease-out;
+
+  @media (max-width: 630px) {
+    font-size: 24px;
+    line-height: 30px;
+  }
 `;
 
 export const Paragraph = styled.p<Paragraph>`
@@ -64,6 +77,21 @@ export const Paragraph = styled.p<Paragraph>`
   margin-bottom: 0.4rem;
 
   transition: color 0.1s ease-out;
+
+  @media (max-width: 630px) {
+    font-size: ${(props) =>
+      !props.size || props.size === 'medium'
+        ? '1.1rem'
+        : props.size === 'small'
+        ? '0.9rem'
+        : '1.3rem'};
+    line-height: ${(props) =>
+      !props.size || props.size === 'medium'
+        ? '1.6rem'
+        : props.size === 'small'
+        ? '1rem'
+        : '2rem'};
+  }
 `;
 
 export const Detail = styled.p<TextI>`

@@ -8,6 +8,10 @@ interface CaseStudyListI {
 
 const ListWrapper = styled.div`
   padding-top: 3rem;
+
+  @media (max-width: 630px) {
+    padding-top: 1.6rem;
+  }
 `;
 
 const CaseStudyList = (props: CaseStudyListI) => {
