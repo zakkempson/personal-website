@@ -35,6 +35,7 @@ export const SubTitle = styled.h2<TextI>`
 
   @media (max-width: 630px) {
     font-size: 38px;
+    line-height: 48px;
   }
 `;
 
@@ -111,11 +112,21 @@ export const Detail = styled.p<TextI>`
 
 interface ContainerI {
   width?: 'normal' | 'narrow';
+  align?: 'left' | 'center';
 }
 
 export const Container = styled.div<ContainerI>`
   max-width: ${(props) =>
     !props.width || props.width === 'normal' ? '1300px' : '1000px'};
-  margin: auto;
-  padding: 0 1rem;
+  margin: ${(props) => (props.align === 'left' ? '0 2rem' : 'auto')};
+  padding: 8px 1rem;
+  overflow: hidden;
+
+  @media (max-width: 630px) {
+    margin: 0;
+  }
+`;
+
+export const Divider = styled.hr`
+  margin: 0 0.8rem;
 `;

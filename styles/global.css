@@ -1,8 +1,3 @@
-body,
-:root {
-  overflow-x: hidden;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -79,4 +74,35 @@ hr {
 
 p > img {
   max-width: 400px;
+}
+
+@media screen and (max-width: 630px) {
+  h1 {
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 38px;
+    line-height: 48px;
+  }
+
+  h3 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  h4 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  p,
+  li {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+
+  p > img {
+    max-width: 100%;
+  }
 }

@@ -19,6 +19,12 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+
+  @media (max-width: 650px) {
+    transform: scale(0.8);
+    top: 15px;
+    right: 20px;
+  }
 `;
 
 export interface ProgressI {

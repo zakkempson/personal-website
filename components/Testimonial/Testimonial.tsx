@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrandI } from '../../pages/case-studies/[slug]';
-import { Detail, H3, Paragraph } from '../../styles/styles';
+import { Detail, H3 } from '../../styles/styles';
 import QuotationMark from './QuotationMark';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
@@ -24,16 +24,32 @@ interface TestimonialsContentI {
 
 const TestimonialWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   padding-bottom: 3rem;
+  max-width: 1100px;
+  margin: auto;
+`;
+
+const QuotationMarkWrapper = styled.div`
+  flex: 0.1;
+
+  @media (max-width: 630px) {
+    flex-basis: 100%;
+  }
 `;
 
 const TestiomonialContent = styled.div<TestimonialsContentI>`
   padding-left: 3rem;
+  flex: 1;
 
   mark {
     font-weight: 600;
     background: none;
     color: ${(props) => props.color};
+  }
+
+  @media (max-width: 630px) {
+    padding: 1rem 0;
   }
 `;
 
@@ -58,9 +74,9 @@ const Testimonial = (props: TestimonialI) => {
 
   return (
     <TestimonialWrapper>
-      <div style={{ minWidth: '140px' }}>
+      <QuotationMarkWrapper>
         <QuotationMark color={props.color} />
-      </div>
+      </QuotationMarkWrapper>
       <TestiomonialContent color={props.color}>
         <ReactMarkdown allowDangerousHtml className='testimonial markdown'>
           {props.description}

@@ -11,6 +11,11 @@ const Wrapper = styled.div`
   max-height: 300px;
   box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.3);
   margin: 0.4rem;
+
+  @media (max-width: 630px) {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
 `;
 
 const Image = styled.img`

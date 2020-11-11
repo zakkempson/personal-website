@@ -28,6 +28,7 @@ const LogoLeft = styled.div`
 
   @media (max-width: 630px) {
     justify-content: center;
+    border-right: none;
   }
 `;
 
