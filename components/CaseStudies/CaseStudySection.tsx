@@ -27,7 +27,7 @@ const Name = styled.div<NameI>`
   height: 100%;
   position: sticky;
   top: 0px;
-  width: 200px;
+  width: 15vw;
   text-align: right;
   background-color: white;
 
