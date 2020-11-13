@@ -67,6 +67,21 @@ const IntoRightContent = styled.div`
   max-width: 580px;
 `;
 
+const ButtonWrapper = styled.div`
+  padding-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const SingleButtonWrapper = styled.div`
+  margin-right: 1rem;
+
+  @media (max-width: 630px) {
+    flex-basis: 100%;
+    margin-top: 10px;
+  }
+`;
+
 const IntroComponent = () => {
   const { isMobile } = React.useContext(ResponsiveContext);
 
@@ -94,16 +109,28 @@ const IntroComponent = () => {
             Along the way I’ve started a company, lead product teams and created
             successful user interfaces for businesses and customers.
           </Paragraph>
-          <div style={{ paddingTop: '1rem' }}>
-            <Button
-              onClick={() => window.$crisp.push(['do', 'chat:open'])}
-              secondary
-              fluid={isMobile}
-            >
-              <Wave />
-              <Paragraph style={{ margin: '0' }}>Send a message</Paragraph>
-            </Button>
-          </div>
+          <ButtonWrapper>
+            <SingleButtonWrapper>
+              <Button
+                onClick={() => window.$crisp.push(['do', 'chat:open'])}
+                secondary
+                fluid={isMobile}
+              >
+                <Wave />
+                <Paragraph style={{ margin: '0' }}>Send a message</Paragraph>
+              </Button>
+            </SingleButtonWrapper>
+            <SingleButtonWrapper>
+              <Button
+                url='/files/Zak Kempson - Resumé.pdf'
+                secondary
+                fluid={isMobile}
+                openInNewTab
+              >
+                <Paragraph style={{ margin: '0' }}>See my Resumé</Paragraph>
+              </Button>
+            </SingleButtonWrapper>
+          </ButtonWrapper>
         </IntoRightContent>
       </IntroRight>
     </Intro>

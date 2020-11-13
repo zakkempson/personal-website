@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import styled from 'styled-components';
+import styled, { CSSProperties } from 'styled-components';
 
 interface ButtonI {
   url?: string;
@@ -7,6 +7,8 @@ interface ButtonI {
   onClick?: VoidFunction;
   secondary?: boolean;
   fluid?: boolean;
+  openInNewTab?: boolean;
+  style?: CSSProperties;
 }
 
 type StyledButtonI = Pick<ButtonI, 'secondary' | 'fluid'>;
@@ -27,6 +29,7 @@ const StyledButton = styled.button<StyledButtonI>`
 
   transition: $animate;
   position: relative;
+  color: inherit;
 
   &:active,
   &:focus {
@@ -55,6 +58,11 @@ const StyledButton = styled.button<StyledButtonI>`
       opacity: 1;
     }
   }
+
+  @media (max-width: 630px) {
+    background-color: ${(props) => (props.secondary ? '#f5f5f5' : 'none')};
+    padding: 8px 12px;
+  }
 `;
 
 interface ButtonContext {
@@ -75,6 +83,8 @@ const Button = (props: ButtonI) => {
         onClick={props.onClick ? props.onClick : null}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        target={props.openInNewTab ? '__blank' : '_self'}
+        style={{ textDecoration: 'initial', ...props.style }}
       >
         <StyledButton {...props}>{props.children}</StyledButton>
       </a>
