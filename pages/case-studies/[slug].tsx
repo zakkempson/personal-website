@@ -167,8 +167,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const graphcms = new GraphQLClient(process.env.GRAPH_ENDPOINT);
 
-  console.log('context.params?.slug', context.params?.slug);
-
   const { caseStudy } = await graphcms.request<{ caseStudy: CaseStudyI }>(`
 		{
 			caseStudy(where: {
