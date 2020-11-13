@@ -127,7 +127,7 @@ const IntroComponent = () => {
                 fluid={isMobile}
                 openInNewTab
               >
-                <Paragraph style={{ margin: '0' }}>See my Resumé</Paragraph>
+                <Paragraph style={{ margin: '0' }}>See my resumé</Paragraph>
               </Button>
             </SingleButtonWrapper>
           </ButtonWrapper>

@@ -17,6 +17,7 @@ import GalleryImage from '../../components/CaseStudies/GalleryImage';
 import Gallery from '../../components/CaseStudies/Gallery';
 import Hero from '../../components/CaseStudies/Hero';
 import Details from '../../components/CaseStudies/Details';
+import OtherCaseStudies from '../../components/CaseStudies/OtherCaseStudies';
 
 export interface BrandI {
   name: string;
@@ -52,7 +53,13 @@ export interface CaseStudyI {
   testimonial?: TestimonialI;
 }
 
-const CaseStudy = (props: CaseStudyI) => {
+interface CaseStudyPageI {
+  caseStudy: CaseStudyI;
+  otherCaseStudies: CaseStudyI[];
+}
+
+const CaseStudy = (props: CaseStudyPageI) => {
+  const { caseStudy, otherCaseStudies } = props;
   const articleRef = React.useRef<HTMLElement>();
   const [progress, setProgress] = React.useState(0);
 
@@ -76,51 +83,56 @@ const CaseStudy = (props: CaseStudyI) => {
   return (
     <>
       <Head>
-        <title>{props.title}</title>
+        <title>{caseStudy.title}</title>
       </Head>
       <article ref={articleRef}>
-        <Progress color={props?.color?.hex} progress={progress} />
-        <Hero {...props} />
-        <Details {...props} />
+        <Progress color={caseStudy?.color?.hex} progress={progress} />
+        <Hero {...caseStudy} />
+        <Details {...caseStudy} />
         <div>
-          <CaseStudySection name='Problem' color={props.color.hex}>
+          <CaseStudySection name='Problem' color={caseStudy.color.hex}>
             <ReactMarkdown allowDangerousHtml>
-              {props.problemText}
+              {caseStudy.problemText}
             </ReactMarkdown>
-            {props.problemGallery?.map((p, i) => (
+            {caseStudy.problemGallery?.map((p, i) => (
               <img src={p.url} key={i} />
             ))}
           </CaseStudySection>
-          <CaseStudySection name='Design' color={props.color.hex}>
+          <CaseStudySection name='Design' color={caseStudy.color.hex}>
             <ReactMarkdown allowDangerousHtml>
-              {props.processText}
+              {caseStudy.processText}
             </ReactMarkdown>
             <Gallery>
-              <PrototypeLink {...props} />
-              {props.processGallery?.map((p, i) => (
+              <PrototypeLink {...caseStudy} />
+              {caseStudy.processGallery?.map((p, i) => (
                 <GalleryImage src={p.url} key={i} />
               ))}
             </Gallery>
           </CaseStudySection>
-          <CaseStudySection name='Build' color={props.color.hex}>
-            <ReactMarkdown allowDangerousHtml>{props.buildText}</ReactMarkdown>
-          </CaseStudySection>
-          <CaseStudySection name='Outcome' color={props.color.hex}>
-            <ReactMarkdown allowDangerousHtml linkTarget='__blank'>
-              {props.outcomeText}
+          <CaseStudySection name='Build' color={caseStudy.color.hex}>
+            <ReactMarkdown allowDangerousHtml>
+              {caseStudy.buildText}
             </ReactMarkdown>
-            {props.outcomeGallery?.map((p, i) => (
+          </CaseStudySection>
+          <CaseStudySection name='Outcome' color={caseStudy.color.hex}>
+            <ReactMarkdown allowDangerousHtml linkTarget='__blank'>
+              {caseStudy.outcomeText}
+            </ReactMarkdown>
+            {caseStudy.outcomeGallery?.map((p, i) => (
               <img src={p.url} key={i} />
             ))}
           </CaseStudySection>
-          <CaseStudySection name='What I Learned' color={props.color.hex}>
+          <CaseStudySection name='What I Learned' color={caseStudy.color.hex}>
             <ReactMarkdown allowDangerousHtml>
-              {props.whatILearned}
+              {caseStudy.whatILearned}
             </ReactMarkdown>
           </CaseStudySection>
         </div>
         <Container>
-          <Testimonial {...props.testimonial} color={props.color.hex} />
+          <Testimonial {...caseStudy.testimonial} color={caseStudy.color.hex} />
+        </Container>
+        <Container>
+          <OtherCaseStudies caseStudies={otherCaseStudies} />
         </Container>
       </article>
       <ContactSection />
@@ -154,6 +166,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const graphcms = new GraphQLClient(process.env.GRAPH_ENDPOINT);
+
+  console.log('context.params?.slug', context.params?.slug);
 
   const { caseStudy } = await graphcms.request<{ caseStudy: CaseStudyI }>(`
 		{
@@ -210,9 +224,27 @@ export const getStaticProps: GetStaticProps = async (context) => {
 		}
 	  `);
 
+  const { caseStudies: otherCaseStudies } = await graphcms.request(`
+	  {
+		  caseStudies(where:{slug_not_in: "${context.params?.slug}"}, first: 3) {
+			  title,
+			  description,
+			  slug,
+			  coverImage {
+				  url,
+			  },
+			  roles,
+			  color {
+				  hex
+			  },
+		  }
+	  }
+	`);
+
   return {
     props: {
-      ...caseStudy,
+      caseStudy,
+      otherCaseStudies,
     },
   };
 };
