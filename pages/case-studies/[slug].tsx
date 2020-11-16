@@ -94,9 +94,11 @@ const CaseStudy = (props: CaseStudyPageI) => {
             <ReactMarkdown allowDangerousHtml>
               {caseStudy.problemText}
             </ReactMarkdown>
-            {caseStudy.problemGallery?.map((p, i) => (
-              <img src={p.url} key={i} />
-            ))}
+            <Gallery>
+              {caseStudy.problemGallery?.map((p, i) => (
+                <GalleryImage src={p.url} key={i} />
+              ))}
+            </Gallery>
           </CaseStudySection>
           <CaseStudySection name='Design' color={caseStudy.color.hex}>
             <ReactMarkdown allowDangerousHtml>
@@ -118,9 +120,11 @@ const CaseStudy = (props: CaseStudyPageI) => {
             <ReactMarkdown allowDangerousHtml linkTarget='__blank'>
               {caseStudy.outcomeText}
             </ReactMarkdown>
-            {caseStudy.outcomeGallery?.map((p, i) => (
-              <img src={p.url} key={i} />
-            ))}
+            <Gallery>
+              {caseStudy.outcomeGallery?.map((p, i) => (
+                <GalleryImage src={p.url} key={i} />
+              ))}
+            </Gallery>
           </CaseStudySection>
           <CaseStudySection name='What I Learned' color={caseStudy.color.hex}>
             <ReactMarkdown allowDangerousHtml>
