@@ -58,7 +58,6 @@ const App = ({ Component, pageProps }: AppProps) => {
     });
 
     Router.events.on('routeChangeComplete', () => {
-      console.log('New page is:', Router.pathname);
       restoreScroll();
     });
 
