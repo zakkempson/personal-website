@@ -33,12 +33,12 @@ export interface ProgressI {
 }
 
 const Progress = (props: ProgressI) => {
-  const router = useRouter();
+  const Router = useRouter();
   const [isHovered, setIsHovered] = React.useState(false);
 
   return (
     <Wrapper
-      onClick={() => router.back()}
+      onClick={() => Router.push('/')}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

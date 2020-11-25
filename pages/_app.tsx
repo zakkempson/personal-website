@@ -2,6 +2,7 @@ import { AppProps } from 'next/dist/next-server/lib/router/router';
 import '../styles/global.css';
 import React from 'react';
 import { useWindowSize } from '../hooks/useWindowSize';
+import { useRouter } from 'next/router';
 
 declare global {
   interface Window {
@@ -36,62 +37,49 @@ const App = ({ Component, pageProps }: AppProps) => {
     }
   }, []);
 
-  //   const [scrollMemories, setScrollMemories] = React.useState<{
-  //     [asPath: string]: number;
-  //   }>({});
-  //   const [isPop, setIsPop] = React.useState(false);
+  const [scrollMemories, setScrollMemories] = React.useState<{
+    [asPath: string]: number;
+  }>({});
 
-  //   const Router = useRouter();
+  const [isPop, setIsPop] = React.useState(false);
+  const Router = useRouter();
 
-  //   React.useEffect(() => {
-  //     // let isPop = false;
-  //     const newScrolls: { [asPath: string]: number } = {};
+  // Handle browser 'back' behaviour to deal with 'x' button in case studies and restore scroll positions
+  React.useEffect(() => {
+    if (process.browser) {
+      window.history.scrollRestoration = 'manual';
+      window.onpopstate = () => {
+        setIsPop(true);
+      };
+    }
 
-  //     if (process.browser) {
-  //       window.history.scrollRestoration = 'manual';
-  //       window.onpopstate = () => {
-  //         console.log('Its is apparently a pop');
-  //         setIsPop(true);
-  //       };
-  //     }
+    Router.events.on('routeChangeStart', () => {
+      saveScroll();
+    });
 
-  //     Router.events.on('routeChangeStart', () => {
-  //       console.log('Route change start');
-  //       //   saveScroll();
-  //       //   newScrolls[Router.asPath] = window.scrollY;
-  //     });
+    Router.events.on('routeChangeComplete', () => {
+      console.log('New page is:', Router.pathname);
+      restoreScroll();
+    });
 
-  //     Router.events.on('routeChangeComplete', () => {
-  //       console.log('Route change complete');
-  //       //   if (isPop) {
-  //       //     console.log('isPop!!!!!');
-  //       //     restoreScroll();
-  //       //     setIsPop(false);
-  //       //   } else {
-  //       //     console.log('isNOT POP!!');
-  //       //     scrollToTop();
-  //       //   }
-  //     });
+    const saveScroll = () => {
+      const newScrollMemories = { ...scrollMemories };
+      newScrollMemories[Router.asPath] = window.scrollY;
+      setScrollMemories((sm) => newScrollMemories);
+    };
 
-  //     const saveScroll = () => {
-  //       const newScrollMemories = { ...scrollMemories };
-  //       newScrollMemories[Router.asPath] = window.scrollY;
-  //       setScrollMemories((sm) => newScrollMemories);
-  //     };
+    const restoreScroll = () => {
+      const prevScrollY = scrollMemories[Router.asPath];
+      if (prevScrollY !== undefined && Router.pathname === '/') {
+        window.requestAnimationFrame(() => window.scrollTo(0, prevScrollY));
+      } else {
+        window.requestAnimationFrame(() => window.scrollTo(0, 0));
+      }
+    };
 
-  //     const restoreScroll = () => {
-  //       const prevScrollY = newScrolls[Router.asPath];
-  //       if (prevScrollY !== undefined) {
-  //         window.requestAnimationFrame(() => window.scrollTo(0, prevScrollY));
-  //       }
-  //     };
+    setIsPop(false);
+  }, [Component]);
 
-  //     const scrollToTop = () => {
-  //       window.requestAnimationFrame(() => window.scrollTo(0, 0));
-  //     };
-
-  //     setIsPop(false);
-  //   }, [Component]);
   return (
     <ResponsiveContext.Provider value={windowSize}>
       <Component {...pageProps} />
