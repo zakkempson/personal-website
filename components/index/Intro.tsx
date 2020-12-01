@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { ResponsiveContext } from '../../pages/_app';
 import { Paragraph, H3, Title } from '../../styles/styles';
+import { getExperienceYears } from '../../util/dates';
 import Button from '../Button/Button';
 import Wave from '../Button/Wave';
 import Name from '../Name';
@@ -99,7 +100,7 @@ const IntroComponent = () => {
         <IntoRightContent>
           <H3>
             I’m Zak Kempson, a <strong>product designer</strong> with{' '}
-            <strong>4 years</strong> of experience.
+            <strong>{getExperienceYears()} years</strong> of experience.
           </H3>
           <Paragraph>
             Remarkable products pave the way to a better future, so I get stuck

@@ -13,6 +13,7 @@
     "graphql": "^15.4.0",
     "graphql-request": "^3.3.0",
     "gray-matter": "^4.0.2",
+    "moment": "^2.29.1",
     "next": "^10.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
