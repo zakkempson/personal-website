@@ -107,7 +107,7 @@ const IntroComponent = () => {
             in and help bring them to life.
           </Paragraph>
           <Paragraph>
-            Along the way I’ve started a company, lead product teams and created
+            Along the way I’ve started a company, led product teams and created
             successful user interfaces for businesses and customers.
           </Paragraph>
           <ButtonWrapper>

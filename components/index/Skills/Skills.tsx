@@ -13,7 +13,7 @@ const skills: SkillI[] = [
     title: 'Research',
     icon: 'research',
     description:
-      'The No.1 reason for product failure is not making what people want.  My first step is to deeply understand the humans we are building for, using existing info or by with new research.',
+      'The No.1 reason for product failure is not making what people want.  My first step is to deeply understand the humans we are building for, using existing or new research.',
   },
   {
     title: 'Business',
@@ -25,7 +25,7 @@ const skills: SkillI[] = [
     title: 'Design',
     icon: 'design',
     description:
-      'For me, design is a synthesis of human needs & behaviours, STEM fields, art and economics. I learn deeply about each ingredient in order to find more useful combinations.',
+      'For me, design is a synthesis of human needs & behaviours, STEM fields, arts and economics. I learn deeply about each ingredient in order to find more useful combinations.',
   },
   {
     title: 'Build',

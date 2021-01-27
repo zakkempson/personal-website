@@ -91,7 +91,7 @@ const CaseStudy = (props: CaseStudyPageI) => {
         <Details {...caseStudy} />
         <div>
           <CaseStudySection name='Problem' color={caseStudy.color.hex}>
-            <ReactMarkdown allowDangerousHtml>
+            <ReactMarkdown allowDangerousHtml linkTarget='__blank'>
               {caseStudy.problemText}
             </ReactMarkdown>
             <Gallery>
@@ -101,7 +101,7 @@ const CaseStudy = (props: CaseStudyPageI) => {
             </Gallery>
           </CaseStudySection>
           <CaseStudySection name='Design' color={caseStudy.color.hex}>
-            <ReactMarkdown allowDangerousHtml>
+            <ReactMarkdown allowDangerousHtml linkTarget='__blank'>
               {caseStudy.processText}
             </ReactMarkdown>
             <Gallery>
@@ -112,7 +112,7 @@ const CaseStudy = (props: CaseStudyPageI) => {
             </Gallery>
           </CaseStudySection>
           <CaseStudySection name='Build' color={caseStudy.color.hex}>
-            <ReactMarkdown allowDangerousHtml>
+            <ReactMarkdown allowDangerousHtml linkTarget='__blank'>
               {caseStudy.buildText}
             </ReactMarkdown>
           </CaseStudySection>
@@ -127,7 +127,7 @@ const CaseStudy = (props: CaseStudyPageI) => {
             </Gallery>
           </CaseStudySection>
           <CaseStudySection name='What I Learned' color={caseStudy.color.hex}>
-            <ReactMarkdown allowDangerousHtml>
+            <ReactMarkdown allowDangerousHtml linkTarget='__blank'>
               {caseStudy.whatILearned}
             </ReactMarkdown>
           </CaseStudySection>

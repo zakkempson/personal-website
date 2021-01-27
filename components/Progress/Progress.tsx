@@ -5,8 +5,17 @@ import { useRouter } from 'next/router';
 import ProgressCircle from './ProgressCircle';
 import { Exit } from '../Icons/Icons';
 
-const Wrapper = styled.div`
+const Container = styled.div`
   position: fixed;
+  top: 0;
+  left: 0;
+  max-width: 1400px;
+  width: 100%;
+  z-index: 10;
+`;
+
+const Wrapper = styled.div`
+  position: absolute;
   top: 20px;
   right: 30px;
   border-radius: 100%;
@@ -37,14 +46,16 @@ const Progress = (props: ProgressI) => {
   const [isHovered, setIsHovered] = React.useState(false);
 
   return (
-    <Wrapper
-      onClick={() => Router.push('/')}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <Exit size={isHovered ? 'medium' : 'small'} />
-      <ProgressCircle {...props} />
-    </Wrapper>
+    <Container>
+      <Wrapper
+        onClick={() => Router.push('/')}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <Exit size={isHovered ? 'medium' : 'small'} />
+        <ProgressCircle {...props} />
+      </Wrapper>
+    </Container>
   );
 };
 
