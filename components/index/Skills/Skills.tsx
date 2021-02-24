@@ -19,7 +19,7 @@ const skills: SkillI[] = [
     title: 'Business',
     icon: 'business',
     description:
-      'The best tool we have created (so far) for harnessing human ambition for good is capitalism. For a design to do good, it must be economical as well as functional and beautuful.',
+      'The best tool we have created (so far) for harnessing human ambition for good is capitalism. For a design to do good, it must be economical as well as functional and beautiful.',
   },
   {
     title: 'Design',
