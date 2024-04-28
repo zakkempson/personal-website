@@ -4,13 +4,12 @@ import { Container, Title } from "../styles/styles";
 import React from "react";
 import Intro from "../components/index/Intro";
 import Skills from "../components/index/Skills/Skills";
-import CaseStudyList from "../components/index/CaseStudyList/CaseStudyList";
 import ContactSection from "../components/Contact/ContactSection";
 import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <Layout home>
+    <Layout>
       <Head>
         <title>{siteTitle}</title>
       </Head>

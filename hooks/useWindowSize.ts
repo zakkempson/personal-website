@@ -1,10 +1,10 @@
-import * as React from 'react';
+import * as React from "react";
 
 export const useWindowSize = (params: { element?: HTMLElement } = {}) => {
   const { element } = params;
 
-  const [width, setWidth] = React.useState<number>(undefined);
-  const [height, setHeight] = React.useState<number>(undefined);
+  const [width, setWidth] = React.useState<number>(0);
+  const [height, setHeight] = React.useState<number>(0);
 
   const mobileMaxWidth = 600;
   const tabletMinWidth = 600;
@@ -36,14 +36,14 @@ export const useWindowSize = (params: { element?: HTMLElement } = {}) => {
     };
 
     if (window) {
-      window.addEventListener('resize', handleResize);
+      window.addEventListener("resize", handleResize);
     }
 
     handleResize();
 
     return () => {
       if (window) {
-        window.removeEventListener('resize', handleResize);
+        window.removeEventListener("resize", handleResize);
       }
     };
   }, []);

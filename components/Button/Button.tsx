@@ -80,7 +80,6 @@ const Button = (props: ButtonI) => {
     <ButtonContext.Provider value={{ isHovered }}>
       <a
         href={props.url}
-        onClick={props.onClick ? props.onClick : null}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         target={props.openInNewTab ? '__blank' : '_self'}

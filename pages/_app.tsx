@@ -1,8 +1,8 @@
-import { AppProps } from 'next/dist/next-server/lib/router/router';
 import '../styles/global.css';
 import React from 'react';
 import { useWindowSize } from '../hooks/useWindowSize';
 import { useRouter } from 'next/router';
+import { AppProps } from 'next/app';
 
 declare global {
   interface Window {
@@ -20,22 +20,6 @@ export const ResponsiveContext = React.createContext({
 
 const App = ({ Component, pageProps }: AppProps) => {
   const windowSize = useWindowSize();
-  React.useEffect(() => {
-    if (window) {
-      window.$crisp = [];
-      window.CRISP_WEBSITE_ID = process.env.NEXT_PUBLIC_CRISP_ID;
-
-      const initialize = () => {
-        const d = document;
-        const s = d.createElement('script');
-        s.src = 'https://client.crisp.chat/l.js';
-        s.async = true;
-        d.getElementsByTagName('head')[0].appendChild(s);
-      };
-
-      initialize();
-    }
-  }, []);
 
   const [scrollMemories, setScrollMemories] = React.useState<{
     [asPath: string]: number;

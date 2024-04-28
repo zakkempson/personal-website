@@ -1,8 +1,8 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { ServerStyleSheet } from "styled-components";
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx) {
+  static async getInitialProps(ctx: any) {
     // custom rendering to get around FOUC as nabbed from: https://github.com/vercel/next.js/tree/master/examples/with-styled-components
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
@@ -10,7 +10,7 @@ class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App) => (props) =>
+          enhanceApp: (App: any) => (props: any) =>
             sheet.collectStyles(<App {...props} />),
         });
 
@@ -34,8 +34,8 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link
-            href='https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700&display=swap'
-            rel='stylesheet'
+            href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700&display=swap"
+            rel="stylesheet"
           />
         </Head>
         <body>
