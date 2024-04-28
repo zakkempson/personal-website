@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Container, H3, Paragraph } from '../../styles/styles';
-import Button from '../Button/Button';
-import Wave from '../Button/Wave';
+import React from "react";
+import styled from "styled-components";
+import { Container, H3, Paragraph } from "../../styles/styles";
+import Button from "../Button/Button";
+import Wave from "../Button/Wave";
 
 const Wrapper = styled.section`
   padding: 5rem 0;
@@ -32,7 +32,7 @@ const C2AWrapper = styled.div`
 const ContactSection = () => {
   return (
     <Wrapper>
-      <Container style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <Container style={{ display: "flex", flexWrap: "wrap" }}>
         <TextWrapper>
           <H3>
             <strong>Need design help?</strong> Fellow designer just dropping by?
@@ -43,9 +43,9 @@ const ContactSection = () => {
           </H3>
         </TextWrapper>
         <C2AWrapper>
-          <Button onClick={() => window.$crisp.push(['do', 'chat:open'])}>
+          <Button url="mailto:zakkempson@gmail.com">
             <Wave />
-            <Paragraph style={{ margin: '0' }}>Send a message</Paragraph>
+            <Paragraph style={{ margin: "0" }}>Contact me</Paragraph>
           </Button>
         </C2AWrapper>
       </Container>

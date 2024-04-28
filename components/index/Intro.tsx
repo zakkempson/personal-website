@@ -1,11 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
-import { ResponsiveContext } from '../../pages/_app';
-import { Paragraph, H3, Title } from '../../styles/styles';
-import { getExperienceYears } from '../../util/dates';
-import Button from '../Button/Button';
-import Wave from '../Button/Wave';
-import Name from '../Name';
+import React from "react";
+import styled from "styled-components";
+import { ResponsiveContext } from "../../pages/_app";
+import { Paragraph, H3, Title } from "../../styles/styles";
+import { getExperienceYears } from "../../util/dates";
+import Button from "../Button/Button";
+import Wave from "../Button/Wave";
+import Name from "../Name";
+import Link from "next/link";
 
 const Intro = styled.section`
   display: flex;
@@ -83,6 +84,11 @@ const SingleButtonWrapper = styled.div`
   }
 `;
 
+const Highlight = styled.strong`
+  color: #ff9e52;
+  text-decoration: none;
+`;
+
 const IntroComponent = () => {
   const { isMobile } = React.useContext(ResponsiveContext);
 
@@ -94,41 +100,42 @@ const IntroComponent = () => {
           <Title> Hey, i'm</Title>
           <Name />
         </IntroName>
-        <ZakImage src='/images/zak.png' alt={`Picture of Zak`} />
+        <ZakImage src="/images/zak.png" alt={`Picture of Zak`} />
       </IntroLeft>
       <IntroRight>
         <IntoRightContent>
           <H3>
-            I’m Zak Kempson, a <strong>product designer</strong> with{' '}
-            <strong>{getExperienceYears()} years</strong> of experience.
+            I’m Zak Kempson, senior product designer at{" "}
+            <Link
+              href="https://shopar.ai"
+              target="_blank"
+              style={{ textDecoration: "none" }}
+            >
+              <Highlight>ShopAR</Highlight>
+            </Link>
           </H3>
           <Paragraph>
-            Remarkable products pave the way to a better future, so I get stuck
-            in and help bring them to life.
-          </Paragraph>
-          <Paragraph>
-            Along the way I’ve started a company, led product teams and created
-            successful user interfaces for businesses and customers.
+            I design and build tools for 3D and AR on the web.
           </Paragraph>
           <ButtonWrapper>
             <SingleButtonWrapper>
               <Button
-                onClick={() => window.$crisp.push(['do', 'chat:open'])}
                 secondary
                 fluid={isMobile}
+                url="mailto:zakkempson@gmail.com"
               >
                 <Wave />
-                <Paragraph style={{ margin: '0' }}>Send a message</Paragraph>
+                <Paragraph style={{ margin: "0" }}>Contact me</Paragraph>
               </Button>
             </SingleButtonWrapper>
             <SingleButtonWrapper>
               <Button
-                url='/files/Zak Kempson - Resumé.pdf'
+                url="/files/Zak Kempson - Resumé.pdf"
                 secondary
                 fluid={isMobile}
                 openInNewTab
               >
-                <Paragraph style={{ margin: '0' }}>See my resumé</Paragraph>
+                <Paragraph style={{ margin: "0" }}>See my resumé</Paragraph>
               </Button>
             </SingleButtonWrapper>
           </ButtonWrapper>

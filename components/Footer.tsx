@@ -1,10 +1,10 @@
-import React from 'react';
-import { Detail, H3, Paragraph } from '../styles/styles';
-import styled from 'styled-components';
-import Name from './Name';
-import { SocialIcon } from './Icons/SocialIcons';
-import Button from './Button/Button';
-import Wave from './Button/Wave';
+import React from "react";
+import { Detail, H3, Paragraph } from "../styles/styles";
+import styled from "styled-components";
+import Name from "./Name";
+import { SocialIcon } from "./Icons/SocialIcons";
+import Button from "./Button/Button";
+import Wave from "./Button/Wave";
 
 const LogoWrapper = styled.div`
   padding: 7rem 0;
@@ -65,29 +65,22 @@ const Footer = () => {
     <div>
       <LogoWrapper>
         <LogoLeft>
-          <div style={{ width: '164px' }}>
+          <div style={{ width: "164px" }}>
             <Name />
           </div>
         </LogoLeft>
         <LogoRight>
-          <div style={{ width: '100%' }}>
+          <div style={{ width: "100%" }}>
             <div>
               <H3>Zak Kempson</H3>
             </div>
             <Icons>
-              <SocialIcon name='github' url='https://github.com/zakkempson' />
-              <SocialIcon name='twitter' url='https://twitter.com/ZakKempson' />
+              <SocialIcon name="github" url="https://github.com/zakkempson" />
+              <SocialIcon name="twitter" url="https://twitter.com/ZakKempson" />
               <SocialIcon
-                name='linkedin'
-                url='https://www.linkedin.com/in/zak-kempson/'
+                name="linkedin"
+                url="https://www.linkedin.com/in/zak-kempson/"
               />
-              <Button
-                onClick={() => window.$crisp.push(['do', 'chat:open'])}
-                secondary
-              >
-                <Wave />
-                <Paragraph style={{ margin: '0' }}>Send a message</Paragraph>
-              </Button>
             </Icons>
           </div>
         </LogoRight>
