@@ -17,7 +17,6 @@ export default function Home() {
       <Skills />
       <Container>
         <Title style={{ marginTop: "2rem" }}>Recent work (coming soon)</Title>
-        {/* <CaseStudyList caseStudies={caseStudies} /> */}
       </Container>
       <ContactSection />
       <Footer />
