@@ -199,6 +199,256 @@ const ProductExperimentation = () => {
               )
             </li>
           </ol>
+
+          <h3
+            style={{ marginTop: "5rem" }}
+          >{`> Experimenting in regulated spaces`}</h3>
+          <p>
+            In regulated industries like Lawtech (or Fintech), moving fast while
+            maintaining compliance and trust is a balancing act. The core
+            challenge is to iterate while staying compliant and building trust.
+          </p>
+          <p>
+            It may seem like you are at a disadvantage compared to teams
+            operating in unregulated spaces, but the success of companies like
+            Stripe show us that there are reasons to be optimistic that
+            regulatory constraints can be used to your advantage.
+          </p>
+          <p>
+            <b>Compliance as a competitive advantage:</b> Stripe built
+            compliance with various global standards early-on (e.g., PCI-DSS for
+            payment security). This then became an additional reason to use
+            their product - if not for the ease of use, then for ‘outsourcing’
+            your website’s PCI-compliance to Stripe.
+          </p>
+          <p>
+            <b>Modular infrastructure:</b> Rather than create rigid systems,
+            Stripe created a modular architecture that could adapt to various
+            currencies and regulations globally (e.g. handing VAT, KYC) which
+            allowed them to scale without needing major overhauls for each new
+            market.
+          </p>
+          <p>
+            <b>Transparency and simplicity:</b> Transparency is key to building
+            trust. In addition to building tools that can handle various
+            financial regulatory requirements, Stripe has created resources to
+            explain why certain regulations are needed. Especially in Lawtech,
+            offering clear, plain-language explanations of complex legal
+            concepts can be a way to differentiate from competitors. (Note:
+            Recent LLM models are now smart and affordable enough to drastically
+            speed up this process, provided plenty of fact-checking to ensure
+            details are accurate)
+          </p>
+          <p>
+            <b>Human-AI Interface:</b> On the subject of LLMs, they are now
+            smart enough to let less technical users take advantage of complex
+            software tools via plain text, in their primary language. This is a
+            very new landscape, ripe for reimagining how and where software is
+            used. The chat format is getting a lot of attention right now - but
+            is unlikely to be the only, or even primary, mode of interaction
+            with AI for most people. (
+            <a
+              href="https://tgoldsmith.co.uk/writing/chat-for-llms"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              More on that here by my colleague Tom Goldsmith
+            </a>
+            )
+          </p>
+          <p>
+            <b>Balancing speed with compliance partnerships:</b> Just as you
+            might become the company people outsource compliance to, you may
+            also find that partnering with established legal firms, compliance
+            experts of government bodies may provide a shortcut to compliance
+            and trust.
+          </p>
+          <p>
+            <b>Failing safely:</b> From the beginning, Stripe focused on
+            creating an infrastructure where small and localised failures are
+            possible but catastrophic failures are extremely unlikely. Building
+            additional redundancy, sandboxes and additional recovery mechanisms
+            may seem like additional effort but may pay off over time as you can
+            experiment faster with new features without worrying about critical
+            failures that can damage trust with your user base.
+          </p>
+          <div style={{ marginTop: "5rem" }}>
+            <h3
+              style={{ marginTop: "5rem" }}
+            >{`> Plotting Your Assumptions`}</h3>
+            <p>
+              Before diving into experiments, it’s really helpful to map out
+              your assumptions. This means identifying which assumptions are the
+              riskiest (those that, if wrong, could really hurt your product)
+              and which are safer. By focusing on the assumptions with the least
+              evidence and the highest risk, you can make sure you're tackling
+              the most critical unknowns first.
+            </p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Least Evidence</th>
+                  <th>Most Evidence</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <strong>Most Dangerous</strong>
+                  </td>
+                  <td>!!!☠️☠️☠️!!!</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Least Dangerous</strong>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h4>Example from ShopAR:</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Least Evidence</th>
+                  <th>Most Evidence</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <strong>Most Dangerous</strong>
+                  </td>
+                  <td>
+                    - 3D renders are good enough that companies will be willing
+                    to replace traditional photography pipelines
+                  </td>
+                  <td>
+                    - Ecommerce companies invest in product photography in
+                    addition to what the manufacturers provide for personalized
+                    or seasonal images
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Least Dangerous</strong>
+                  </td>
+                  <td>
+                    - Ecommerce providers already have or are capable of
+                    creating 3D models
+                  </td>
+                  <td>
+                    - Ecommerce companies already use synthetic photography
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style={{ marginTop: "5rem" }}>
+            <h3
+              style={{ marginTop: "5rem" }}
+            >{`> Hypothesis-Driven Development`}</h3>
+            <p>
+              A lot of teams rush into building solutions without testing their
+              assumptions. This can be especially true when people have a lot of
+              experience in a specific area — they might feel like they don’t
+              need to "go back to basics." But it’s important to frame decisions
+              as testable hypotheses, rather than just assumptions. Every
+              feature or change should be an answer to a specific question, like
+              “Will this feature increase engagement?” or “Will this reduce
+              churn by 10%?”
+            </p>
+
+            <p>A simple hypothesis template is:</p>
+            <blockquote>
+              <p>
+                We believe that [X feature/change] will result in [Y outcome],
+                which we will measure using [Z metric].
+              </p>
+            </blockquote>
+
+            <h3 style={{ marginTop: "5rem" }}>Activity: Prepare Your Hypotheses</h3>
+            <p>
+              Now it's your turn! Use the hypothesis template below to create
+              some testable assumptions for your product:
+            </p>
+
+            <blockquote>
+              <p>
+                We believe that [X feature/change] will result in [Y outcome],
+                which we will measure using [Z metric].
+              </p>
+            </blockquote>
+
+            <h4>Example from ShopAR:</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>We believe that [X feature/change]</th>
+                  <th>Will result in [Y outcome]</th>
+                  <th>Which we will measure using [Z metric]</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    We believe that offering high-quality, customizable 3D
+                    renders of products will encourage ecommerce companies to
+                    reduce their reliance on traditional photography pipelines.
+                  </td>
+                  <td>
+                    Companies will replace at least 50% of their traditional
+                    product photography with 3D renders within 6 months.
+                  </td>
+                  <td>
+                    The percentage reduction in spending on traditional
+                    photography compared to 3D renders.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    We believe that providing an easy-to-use tool for generating
+                    3D models from existing product images will result in higher
+                    adoption rates among ecommerce companies.
+                  </td>
+                  <td>
+                    30% of companies will integrate the 3D model tool into their
+                    workflow within the first 3 months.
+                  </td>
+                  <td>
+                    Adoption rate of the 3D model tool measured by the number of
+                    active users.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    We believe that integrating real-time 3D visualization (AR
+                    or 360 views) of products will lead to increased conversion
+                    rates.
+                  </td>
+                  <td>
+                    The introduction of real-time 3D visualizations will result
+                    in a 15% increase in conversion rates.
+                  </td>
+                  <td>
+                    Conversion rate data comparing product pages with and
+                    without real-time 3D views.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section style={{ marginTop: "5rem" }}>
+          <h2>2. Designing Experiments</h2>
           <h3 style={{ marginTop: "5rem" }}>{`> Experiment focus`}</h3>
           <p>
             Sometimes it's useful to think about experiments in terms of their
@@ -284,251 +534,8 @@ const ProductExperimentation = () => {
               manual lawyer reviews.
             </p>
           </div>
-          <h3
-            style={{ marginTop: "5rem" }}
-          >{`> Experimenting in regulated spaces`}</h3>
-          <p>
-            In regulated industries like Lawtech (or Fintech), moving fast while
-            maintaining compliance and trust is a balancing act. The core
-            challenge is to iterate while staying compliant and building trust.
-          </p>
-          <p>
-            It may seem like you are at a disadvantage compared to teams
-            operating in unregulated spaces, but the success of companies like
-            Stripe show us that there are reasons to be optimistic that
-            regulatory constraints can be used to your advantage.
-          </p>
-          <p>
-            <b>Compliance as a competitive advantage:</b> Stripe built
-            compliance with various global standards early-on (e.g., PCI-DSS for
-            payment security). This then became an additional reason to use
-            their product - if not for the ease of use, then for ‘outsourcing’
-            your website’s PCI-compliance to Stripe.
-          </p>
-          <p>
-            <b>Modular infrastructure:</b> Rather than create rigid systems,
-            Stripe created a modular architecture that could adapt to various
-            currencies and regulations globally (e.g. handing VAT, KYC) which
-            allowed them to scale without needing major overhauls for each new
-            market.
-          </p>
-          <p>
-            <b>Transparency and simplicity:</b> Transparency is key to building
-            trust. In addition to building tools that can handle various
-            financial regulatory requirements, Stripe has created resources to
-            explain why certain regulations are needed. Especially in Lawtech,
-            offering clear, plain-language explanations of complex legal
-            concepts can be a way to differentiate from competitors. (Note:
-            Recent LLM models are now smart and affordable enough to drastically
-            speed up this process, provided plenty of fact-checking to ensure
-            details are accurate)
-          </p>
-          <p>
-            <b>Human-AI Interface:</b> On the subject of LLMs, they are now
-            smart enough to let less technical users take advantage of complex
-            software tools via plain text, in their primary language. This is a
-            very new landscape, ripe for reimagining how and where software is
-            used. The chat format is getting a lot of attention right now - but
-            is unlikely to be the only, or even primary, mode of interaction
-            with AI for most people. (
-            <a
-              href="https://tgoldsmith.co.uk/writing/chat-for-llms"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              More on that here by my colleague Tom Goldsmith
-            </a>
-            )
-          </p>
-          <p>
-            <b>Balancing speed with compliance partnerships:</b> Just as you
-            might become the company people outsource compliance to, you may
-            also find that partnering with established legal firms, compliance
-            experts of government bodies may provide a shortcut to compliance
-            and trust.
-          </p>
-          <p>
-            <b>Failing safely:</b> From the beginning, Stripe focused on
-            creating an infrastructure where small and localised failures are
-            possible but catastrophic failures are extremely unlikely. Building
-            additional redundancy, sandboxes and additional recovery mechanisms
-            may seem like additional effort but may pay off over time as you can
-            experiment faster with new features without worrying about critical
-            failures that can damage trust with your user base.
-          </p>
-          <div style={{ marginTop: "5rem" }}>
-            <h2>Plotting Your Assumptions</h2>
-            <p>
-              Before diving into experiments, it’s really helpful to map out
-              your assumptions. This means identifying which assumptions are the
-              riskiest (those that, if wrong, could really hurt your product)
-              and which are safer. By focusing on the assumptions with the least
-              evidence and the highest risk, you can make sure you're tackling
-              the most critical unknowns first.
-            </p>
 
-            <table>
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>Least Evidence</th>
-                  <th>Most Evidence</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <strong>Most Dangerous</strong>
-                  </td>
-                  <td>!!!☠️☠️☠️!!!</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <strong>Least Dangerous</strong>
-                  </td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-
-            <h4>Example from ShopAR:</h4>
-            <table>
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>Least Evidence</th>
-                  <th>Most Evidence</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <strong>Most Dangerous</strong>
-                  </td>
-                  <td>
-                    - 3D renders are good enough that companies will be willing
-                    to replace traditional photography pipelines
-                  </td>
-                  <td>
-                    - Ecommerce companies invest in product photography in
-                    addition to what the manufacturers provide for personalized
-                    or seasonal images
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <strong>Least Dangerous</strong>
-                  </td>
-                  <td>
-                    - Ecommerce providers already have or are capable of
-                    creating 3D models
-                  </td>
-                  <td>
-                    - Ecommerce companies already use synthetic photography
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div style={{ marginTop: "5rem" }}>
-            <h2>Hypothesis-Driven Development</h2>
-            <p>
-              A lot of teams rush into building solutions without testing their
-              assumptions. This can be especially true when people have a lot of
-              experience in a specific area — they might feel like they don’t
-              need to "go back to basics." But it’s important to frame decisions
-              as testable hypotheses, rather than just assumptions. Every
-              feature or change should be an answer to a specific question, like
-              “Will this feature increase engagement?” or “Will this reduce
-              churn by 10%?”
-            </p>
-
-            <p>A simple hypothesis template is:</p>
-            <blockquote>
-              <p>
-                We believe that [X feature/change] will result in [Y outcome],
-                which we will measure using [Z metric].
-              </p>
-            </blockquote>
-
-            <h3>Activity: Prepare Your Hypotheses</h3>
-            <p>
-              Now it's your turn! Use the hypothesis template below to create
-              some testable assumptions for your product:
-            </p>
-
-            <blockquote>
-              <p>
-                We believe that [X feature/change] will result in [Y outcome],
-                which we will measure using [Z metric].
-              </p>
-            </blockquote>
-
-            <h4>Example from ShopAR:</h4>
-            <table>
-              <thead>
-                <tr>
-                  <th>We believe that [X feature/change]</th>
-                  <th>Will result in [Y outcome]</th>
-                  <th>Which we will measure using [Z metric]</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    We believe that offering high-quality, customizable 3D
-                    renders of products will encourage ecommerce companies to
-                    reduce their reliance on traditional photography pipelines.
-                  </td>
-                  <td>
-                    Companies will replace at least 50% of their traditional
-                    product photography with 3D renders within 6 months.
-                  </td>
-                  <td>
-                    The percentage reduction in spending on traditional
-                    photography compared to 3D renders.
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    We believe that providing an easy-to-use tool for generating
-                    3D models from existing product images will result in higher
-                    adoption rates among ecommerce companies.
-                  </td>
-                  <td>
-                    30% of companies will integrate the 3D model tool into their
-                    workflow within the first 3 months.
-                  </td>
-                  <td>
-                    Adoption rate of the 3D model tool measured by the number of
-                    active users.
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    We believe that integrating real-time 3D visualization (AR
-                    or 360 views) of products will lead to increased conversion
-                    rates.
-                  </td>
-                  <td>
-                    The introduction of real-time 3D visualizations will result
-                    in a 15% increase in conversion rates.
-                  </td>
-                  <td>
-                    Conversion rate data comparing product pages with and
-                    without real-time 3D views.
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section style={{ marginTop: "5rem" }}>
-          <h2>2. Designing Experiments</h2>
+          <h3 style={{ marginTop: "5rem" }}>{`> Experiment goals`}</h3>
           <p>
             Designing a good experiment isn't just about building something and
             seeing if it works. It’s about setting clear goals and using the
@@ -543,10 +550,8 @@ const ProductExperimentation = () => {
             users (DAUs), while Spotify focuses on time spent listening. It’s
             one number you can focus on as you experiment.
           </p>
-
           <h3>Types of experiments</h3>
           <p>Let’s look at some common types of product experiments:</p>
-
           <h4>Prototypes</h4>
           <p>
             Prototypes are quick mock-ups that help you test your ideas without
@@ -562,7 +567,6 @@ const ProductExperimentation = () => {
               what they valued in the service.
             </p>
           </div>
-
           <h4>Minimum Viable Product (MVP)</h4>
           <p>
             This is the most basic version of your product that still delivers
@@ -579,7 +583,6 @@ const ProductExperimentation = () => {
               in personal computing.
             </p>
           </div>
-
           <h4>Surveys</h4>
           <p>
             Surveys are a simple way to gather user feedback and understand
@@ -595,7 +598,6 @@ const ProductExperimentation = () => {
               missing in your product.
             </p>
           </div>
-
           <h4>Smoke Tests</h4>
           <p>
             Smoke tests let you gauge interest in a product or feature before
@@ -611,7 +613,6 @@ const ProductExperimentation = () => {
               single line of code.
             </p>
           </div>
-
           <h4>A/B Tests</h4>
           <p>
             A/B tests compare two versions of something to see which one
