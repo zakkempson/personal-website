@@ -4,7 +4,7 @@
 }
 
 h1 {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 80px;
@@ -13,7 +13,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 48px;
@@ -23,28 +23,30 @@ h2 {
 }
 
 h3 {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 32px;
   line-height: 38px;
   color: #3a3441;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 h4 {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 28px;
+  font-size: 26px;
   line-height: 34px;
   color: #3a3441;
+  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
 p,
 li {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 1.2rem;
@@ -60,11 +62,12 @@ li {
 
 ul,
 ol {
+  margin-top: 2rem;
   padding: 0rem 0 2rem 2rem;
 }
 
 li {
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 hr {
@@ -106,5 +109,47 @@ p > img {
 
   p > img {
     max-width: 100%;
+  }
+}
+
+.example {
+  padding: 2rem;
+  background-color: #D6F1FF;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  font-family: "Work Sans", sans-serif;
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border: 1px solid #e0e0e0;
+}
+
+th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+  color: #3a3441;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f0f0f0;
+}
+
+@media screen and (max-width: 630px) {
+  table {
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 0.5rem;
   }
 }
