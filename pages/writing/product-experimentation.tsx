@@ -14,6 +14,7 @@ const ProductExperimentation = () => {
         <h1 style={{ lineHeight: "1", marginBottom: "1rem" }}>
           Product Experimentation
         </h1>
+        <h4 style={{ opacity: 0.7 }}>22 October 2024</h4>
         <h4 className="text-muted-foreground">
           This the article form of a workshop on Product Experimentation I ran
           for Lawtech UK in October 2024.
@@ -56,37 +57,59 @@ const ProductExperimentation = () => {
           <p>
             I've seen time and time again that when I'm part of a team with a
             strong experimental mindset - shifting from "we're building our
-            idea" to "we're finding what works" - I build more value, faster. In
-            this workshop I aim to share 'things I wish I had learned sooner
-            about product experimentation'.
-          </p>
-          <p>
-            As well as discussing general strategies for product
-            experimentation, I will also consider experimentation within
-            regulated industries. It may seem like the ‘move fast, break things’
-            ethos would not work well in spaces where trust and compliance are
-            table stakes, when in fact these constraints can be used to great
-            advantage when experimenting.
+            idea" to "we're finding what works" - I build more value, faster.
           </p>
         </section>
         <section style={{ marginTop: "4rem" }}>
-          <h2>The plan</h2>
+          <h2>What to expect</h2>
+          <p>In this workshop, I aim to share:</p>
+          <ol>
+            <li>
+              <b>Practical strategies for product experimentation - </b>
+              <span>Focusing on firsthand insights and techniques.</span>
+            </li>
+            <li>
+              <b>Tools to spark new perspectives - </b>
+              <span>
+                Tools and approaches that have proven helpful in my journey.
+              </span>
+            </li>
+            <li>
+              <b>Experimentation in a regulated industry - </b>
+              <span>
+                How constraints can foster more thoughtful and rigorous
+                innovation.
+              </span>
+            </li>
+          </ol>
           <p>
-            In this workshop, we’ll run through three main sections with a mix
-            of ideas, activities and discussion.
+            We'll run through three main sections with a mix of ideas,
+            activities and discussion.
           </p>
           <ol>
-            <li>Experiment toolkit</li>
-            <li>Designing experiments</li>
-            <li>Doing experiments</li>
+            <li>
+              <h3 style={{ marginTop: "1rem", marginBottom: "1rem" }}>
+                Experiment toolkit
+              </h3>
+            </li>
+            <li>
+              <h3 style={{ marginTop: "1rem", marginBottom: "1rem" }}>
+                Designing experiments
+              </h3>
+            </li>
+            <li>
+              <h3 style={{ marginTop: "1rem", marginBottom: "1rem" }}>
+                Doing experiments
+              </h3>
+            </li>
           </ol>
         </section>
         <section style={{ marginTop: "5rem" }}>
           <h2>1. Experiment toolkit</h2>
           <h3 style={{ marginTop: "5rem" }}>{`> Why should I experiment?`}</h3>
           <p>
-            Let's put the concept to the test. Why do I need it? What happens if
-            I don't use it?
+            Let's put the entire concept of experimentation to the test. Why do
+            I need it? What happens if I don't use it?
           </p>
           <p>
             A good place to start is to look at the Waterfall Method, in some
@@ -96,7 +119,7 @@ const ProductExperimentation = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Acidentally penned
+              Accidentally penned
             </a>{" "}
             by software pioneer{" "}
             <a
@@ -116,19 +139,30 @@ const ProductExperimentation = () => {
           <p>
             The canyon over which you build a bridge is likely to remain
             unchanged for thousands of years, but in software we are building
-            products in on a landscape where user needs, tech and regulation can
+            products on a landscape where user needs, tech and regulation can
             shift rapidly, so a number of unpleasant things can happen when you
-            fail to course correct while building your product. Here are a few
-            that I've seen in the wild:
+            fail to course-correct while building your product:
           </p>
           <h4>Building on faulty assumptions</h4>
           <p>
             Teams can fall into the trap of believing they can predict all user
             needs and requirements before starting the project. This is a great
-            way to build things that people don't actually want or need. With
-            experimentation, you can assume the assumption is flawed and only
-            bet big on it when you have confidence based on real evidence.
+            way to build things that people don't want. With experimentation,
+            you can start with the attitude that your initial assumptions are
+            flawed, then work on building things that people do want based on
+            real evidence.
           </p>
+          <div className="example">
+            <p>Example:</p>
+            <p>
+              Google Wave (2009) aimed to revolutionize communication by
+              combining email, messaging, and collaboration. However, it failed
+              because Google built on faulty assumptions about user needs,
+              launching an overly complex tool without iterative testing. Users
+              found it confusing, and demand was far lower than expected,
+              leading to its discontinuation within a year.
+            </p>
+          </div>
           <h4>Late Discovery of Failures</h4>
           <p>
             Waterfall methods lead to late testing, meaning failures are
@@ -139,17 +173,17 @@ const ProductExperimentation = () => {
           <div className="example">
             <p>Example:</p>
             <p>
-              On the first day Heathcare.gov was launched in 2013, four million
-              unique users visited the portal, but only six successfully
-              registered. Even the users that did sign up experienced errors,
-              including duplicates in enrolment applications submitted to
-              insurers.
+              NASA’s Mars Climate Orbiter was a waterfall-driven project where a
+              small unit conversion error (between metric and imperial) led to
+              mission failure. Had more iterative, real-world testing been
+              conducted earlier in the process, the error might have been
+              caught.
             </p>
           </div>
           <h4>Not Adapting to New Information</h4>
           <p>
             Waterfall assumes that project requirements are locked in once and
-            you never revisit them, making it harder to adapt to new
+            you never revisit them. This makes it harder to adapt to new
             information, market trends or regulatory changes. With
             experimentation, you are prepared for new information and ready to
             take advantage of it.
@@ -158,8 +192,9 @@ const ProductExperimentation = () => {
             <p>Example:</p>
             <p>
               Kodak is a classic example. They stuck to their original plan
-              (film cameras) and did not adapt to digital photography, even
-              though they invented it. They failed to pivot in time.
+              (film cameras) and did not fully embrace digital photography, even
+              though they invented it. They failed to pivot in time and went
+              bankrupt in 2012.
             </p>
           </div>
           <h3>{`> Root cause analysis (The 5 Whys)`}</h3>
@@ -193,8 +228,9 @@ const ProductExperimentation = () => {
             <li>
               Keep asking "Why?" until you find a root cause (
               <i>
-                e.g. Why are they not aware of the feature? → Because the
-                onboarding process doesn't highlight it clearly.
+                e.g. Why are they not aware of the feature? → Because it is not
+                presented to the user as an option at an intuitive point in
+                their journey.
               </i>
               )
             </li>
@@ -204,7 +240,7 @@ const ProductExperimentation = () => {
             style={{ marginTop: "5rem" }}
           >{`> Experimenting in regulated spaces`}</h3>
           <p>
-            In regulated industries like Lawtech (or Fintech), moving fast while
+            In regulated industries like Lawtech or Fintech, moving fast while
             maintaining compliance and trust is a balancing act. The core
             challenge is to iterate while staying compliant and building trust.
           </p>
@@ -279,10 +315,10 @@ const ProductExperimentation = () => {
             <p>
               Before diving into experiments, it’s really helpful to map out
               your assumptions. This means identifying which assumptions are the
-              riskiest (those that, if wrong, could really hurt your product)
-              and which are safer. By focusing on the assumptions with the least
-              evidence and the highest risk, you can make sure you're tackling
-              the most critical unknowns first.
+              riskiest (those that, if wrong, could undermine your entire
+              product direction) and which are safer. By focusing on the
+              assumptions with the least evidence and the highest risk, you can
+              make sure you're tackling the most critical unknowns first.
             </p>
 
             <table>
@@ -327,12 +363,11 @@ const ProductExperimentation = () => {
                   </td>
                   <td>
                     - 3D renders are good enough that companies will be willing
-                    to replace traditional photography pipelines
+                    to use them instead of traditional photography pipelines
                   </td>
                   <td>
-                    - Ecommerce companies invest in product photography in
-                    addition to what the manufacturers provide for personalized
-                    or seasonal images
+                    - Ecommerce companies, as well as manufacturers, invest in
+                    product photography
                   </td>
                 </tr>
                 <tr>
@@ -366,15 +401,19 @@ const ProductExperimentation = () => {
               churn by 10%?”
             </p>
 
-            <p>A simple hypothesis template is:</p>
+            <p>A simple hypothesis template:</p>
             <blockquote>
-              <p>
-                We believe that [X feature/change] will result in [Y outcome],
-                which we will measure using [Z metric].
+              <p style={{ lineHeight: "2.5rem" }}>
+                <b>
+                  We believe that [X feature/change] will result in [Y outcome],
+                  which we will measure using [Z metric].
+                </b>
               </p>
             </blockquote>
 
-            <h3 style={{ marginTop: "5rem" }}>Activity: Prepare Your Hypotheses</h3>
+            <h3 style={{ marginTop: "5rem" }}>
+              Activity: Prepare Your Hypotheses
+            </h3>
             <p>
               Now it's your turn! Use the hypothesis template below to create
               some testable assumptions for your product:
@@ -496,7 +535,7 @@ const ProductExperimentation = () => {
               customers.
             </p>
           </div>
-          <h4>Process-focused experimentation</h4>
+          <h4>Process-focused experiments</h4>
           <p>
             When you considering with how the product development process or
             company operations work.
@@ -509,7 +548,7 @@ const ProductExperimentation = () => {
               and empowering workers to solve production issues directly.
             </p>
           </div>
-          <h4>Process-focused experimentation</h4>
+          <h4>Process-focused experiments</h4>
           <p>
             When you considering with how the product development process or
             company operations work.
@@ -522,7 +561,7 @@ const ProductExperimentation = () => {
               and empowering workers to solve production issues directly.
             </p>
           </div>
-          <h4>Hybrid product/service experimentation</h4>
+          <h4>Hybrid product/service experiments</h4>
           <p>
             Experimenting with how much of the solution should be productised
             vs. manual services.
@@ -543,21 +582,102 @@ const ProductExperimentation = () => {
             building anything is setting up clear, measurable goals that will
             guide your experiments.
           </p>
+          <ol>
+            <li>Does it clearly define an outcome?</li>
+            <li>Is it possible to exceed the target?</li>
+            <li>
+              Is it easy to explain why achieving the goal is a good thing?
+            </li>
+            <li>Is it easy to understand?</li>
+            <li>Is it hard to game and is the outcome net positive?</li>
+            <li>Can it can be influenced by the team?</li>
+          </ol>
           <p>
-            A helpful approach is to set a "North Star" metric for your product.
-            This should represent the most important thing you're trying to
-            improve. The North Star for Facebook, for example, was daily active
-            users (DAUs), while Spotify focuses on time spent listening. It’s
-            one number you can focus on as you experiment.
+            A "North Star" can be a very helpfulmetric for your product. This
+            should represent the most important thing you're trying to improve.
+            <b> One number you can focus on as you experiment.</b> A good North
+            Star needs:
           </p>
-          <h3>Types of experiments</h3>
-          <p>Let’s look at some common types of product experiments:</p>
+          <ol>
+            <li>
+              <b>Clarity and Focus - </b> Provides a clear, singular goal that
+              aligns the entire team and guides decision-making.
+            </li>
+            <li>
+              <b>Customer-Centric - </b> Ensures that the primary focus remains
+              on delivering value to customers (usually not revenue).
+            </li>
+            <li>
+              <b>Consistent - </b> Maintains consistent priorities across
+              various experiments, helping to avoid distractions from less
+              impactful metrics.
+            </li>
+          </ol>
+          <p>Some examples of North Stars include:</p>
+          <ul>
+            <li>
+              <b>Airbnb -</b> Number of nights booked.
+            </li>
+            <li>
+              <b>Facebook -</b> Daily active users (DAUs).
+            </li>
+            <li>
+              <b>Spotify -</b> Time spent listening.
+            </li>
+            <li>
+              <b>Slack -</b> Number of teams sending 2,000+ messages.
+            </li>
+          </ul>
+          <p>
+            To read more on this I recommend my colleague and ex-Meta PM Tom
+            Goldsmith's{"  "}
+            <a
+              href="https://tgoldsmith.co.uk/writing/good-goals"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              article on setting good goals
+            </a>
+            .
+          </p>
+
+          <h3>Types of product experiments</h3>
           <h4>Prototypes</h4>
           <p>
             Prototypes are quick mock-ups that help you test your ideas without
             fully building them. They’re great for checking if the concept works
             for users, even though they might not be perfect.
           </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Good for testing:</th>
+                <th>Common mistakes:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <ul>
+                    <li>User interaction with new features</li>
+                    <li>Initial reactions & usability</li>
+                    <li>Design feasibility</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>Spending too long on making prototypes perfect</li>
+                    <li>
+                      Using it on hypotheses that require deeper user
+                      interaction over time
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
           <div className="example">
             <p>Example:</p>
             <p>
@@ -567,12 +687,44 @@ const ProductExperimentation = () => {
               what they valued in the service.
             </p>
           </div>
+
           <h4>Minimum Viable Product (MVP)</h4>
           <p>
             This is the most basic version of your product that still delivers
             value to users. It helps you gather feedback and make improvements
             quickly.
           </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Good for testing:</th>
+                <th>Common mistakes:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <ul>
+                    <li>Core value propositions & essential features</li>
+                    <li>
+                      Initial user engagement and feedback with a new concept
+                    </li>
+                    <li>
+                      Whether people actually want to use your product
+                      repeatedly
+                    </li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>Overcomplicating the MVP</li>
+                    <li>Ignoring early user feedback & insights</li>
+                    <li>Lack of vision & goals</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
           <div className="example">
             <p>Example:</p>
             <p>
@@ -583,6 +735,7 @@ const ProductExperimentation = () => {
               in personal computing.
             </p>
           </div>
+
           <h4>Surveys</h4>
           <p>
             Surveys are a simple way to gather user feedback and understand
@@ -590,6 +743,34 @@ const ProductExperimentation = () => {
             careful not to make them too long or filled with hypothetical
             questions.
           </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Good for testing:</th>
+                <th>Common mistakes:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <ul>
+                    <li>User preferences & feedback</li>
+                    <li>Pain points</li>
+                    <li>Demographics</li>
+                    <li>Measuring satisfaction</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>
+                      Hypothetical questions, like “Would you use this feature?”
+                    </li>
+                    <li>Making the surveys way too long</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
           <div className="example">
             <p>Example:</p>
             <p>
@@ -598,12 +779,42 @@ const ProductExperimentation = () => {
               missing in your product.
             </p>
           </div>
+
           <h4>Smoke Tests</h4>
           <p>
             Smoke tests let you gauge interest in a product or feature before
             fully developing it. Essentially, you're testing the market's
             appetite for something to avoid wasted effort.
           </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Good for testing:</th>
+                <th>Common mistakes:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <ul>
+                    <li>Market demand for a new product or feature</li>
+                    <li>User willingness to engage with a proposed concept</li>
+                    <li>Validate initial interest before full development</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>Lack of clear objectives</li>
+                    <li>Insufficient test coverage</li>
+                    <li>Poorly defined test cases</li>
+                    <li>Ignoring user experience</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
           <div className="example">
             <p>Example:</p>
             <p>
@@ -613,6 +824,7 @@ const ProductExperimentation = () => {
               single line of code.
             </p>
           </div>
+
           <h4>A/B Tests</h4>
           <p>
             A/B tests compare two versions of something to see which one
@@ -620,6 +832,40 @@ const ProductExperimentation = () => {
             large user base yet, it may be hard to get statistically significant
             results.
           </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Good for testing:</th>
+                <th>Common mistakes:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <ul>
+                    <li>Which version of a feature performs better</li>
+                    <li>Impact of small changes (e.g., button color)</li>
+                    <li>Controlled, split-sample comparisons</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>
+                      ⚠️ Not having enough traffic to get statistically
+                      significant results
+                    </li>
+                    <li>Testing too many variables</li>
+                    <li>
+                      Mistaking initial downward trend for a worse product
+                      decision, rather than ‘adjustment pain’.
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
           <div className="example">
             <p>Example:</p>
             <p>
@@ -629,6 +875,80 @@ const ProductExperimentation = () => {
               changes.
             </p>
           </div>
+
+          <h3 style={{ marginTop: "5rem" }}>
+            Activity: Design Your Experiments
+          </h3>
+          <p>
+            Take your list of hypotheses from earlier (ideally those that were
+            based on the riskiest assumptions), and design at least 3
+            experiments you can run that could prove or disprove them.
+          </p>
+
+          <blockquote>
+            <p>
+              We believe that [X feature/change] will result in [Y outcome],
+              which we will measure using [Z metric].
+            </p>
+          </blockquote>
+
+          <h4>Example from ShopAR:</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>We believe that [X feature/change]</th>
+                <th>Will result in [Y outcome]</th>
+                <th>Which we will measure using [Z metric]</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  We believe that offering high-quality, customizable 3D renders
+                  of products will encourage ecommerce companies to reduce their
+                  reliance on traditional photography pipelines.
+                </td>
+                <td>
+                  Companies will replace at least 50% of their traditional
+                  product photography with 3D renders within 6 months.
+                </td>
+                <td>
+                  The percentage reduction in spending on traditional
+                  photography compared to 3D renders.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  We believe that providing an easy-to-use tool for generating
+                  3D models from existing product images will result in higher
+                  adoption rates among ecommerce companies.
+                </td>
+                <td>
+                  30% of companies will integrate the 3D model tool into their
+                  workflow within the first 3 months.
+                </td>
+                <td>
+                  Adoption rate of the 3D model tool measured by the number of
+                  active users.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  We believe that integrating real-time 3D visualization (AR or
+                  360 views) of products will lead to increased conversion
+                  rates.
+                </td>
+                <td>
+                  The introduction of real-time 3D visualizations will result in
+                  a 15% increase in conversion rates.
+                </td>
+                <td>
+                  Conversion rate data comparing product pages with and without
+                  real-time 3D views.
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </section>
 
         <section style={{ marginTop: "5rem" }}>
