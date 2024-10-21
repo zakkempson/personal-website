@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react';
-import styled, { CSSProperties } from 'styled-components';
+import React, { ReactNode } from "react";
+import styled, { CSSProperties } from "styled-components";
 
 interface ButtonI {
   url?: string;
@@ -11,25 +11,27 @@ interface ButtonI {
   style?: CSSProperties;
 }
 
-type StyledButtonI = Pick<ButtonI, 'secondary' | 'fluid'>;
+type StyledButtonI = Pick<ButtonI, "secondary" | "fluid">;
 
 const StyledButton = styled.button<StyledButtonI>`
-  padding: ${(props) => (props.secondary ? '8px 0px' : '8px 12px')};
-  width: ${(props) => (props.fluid ? '100%' : 'auto')};
+  padding: ${(props) => (props.secondary ? "8px 0px" : "8px 12px")};
+  width: ${(props) => (props.fluid ? "100%" : "auto")};
   cursor: pointer;
   background: none;
   border: none;
   box-shadow: ${(props) =>
-    props.secondary ? 'none' : 'inset 0px 0px 0px 1px #ff9e52'};
+    props.secondary ? "none" : "inset 0px 0px 0px 1px #ff9e52"};
   white-space: nowrap;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  transform: ${(props) => (props.secondary ? 'scale(0.9)' : 'none')};
+  transform: ${(props) => (props.secondary ? "scale(0.9)" : "none")};
+  font-family: "Work Sans", sans-serif;
+  text-decoration: none;
 
   transition: $animate;
   position: relative;
-  color: inherit;
+  color: #3a3441;
 
   &:active,
   &:focus {
@@ -40,7 +42,7 @@ const StyledButton = styled.button<StyledButtonI>`
   &:before,
   &:after {
     left: 0;
-    content: '';
+    content: "";
     position: absolute;
     bottom: -3px;
     width: 0px;
@@ -60,7 +62,7 @@ const StyledButton = styled.button<StyledButtonI>`
   }
 
   @media (max-width: 630px) {
-    background-color: ${(props) => (props.secondary ? '#f5f5f5' : 'none')};
+    background-color: ${(props) => (props.secondary ? "#f5f5f5" : "none")};
     padding: 8px 12px;
   }
 `;
@@ -82,8 +84,11 @@ const Button = (props: ButtonI) => {
         href={props.url}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        target={props.openInNewTab ? '__blank' : '_self'}
-        style={{ textDecoration: 'initial', ...props.style }}
+        target={props.openInNewTab ? "__blank" : "_self"}
+        style={{
+          textDecoration: "initial",
+          ...props.style,
+        }}
       >
         <StyledButton {...props}>{props.children}</StyledButton>
       </a>

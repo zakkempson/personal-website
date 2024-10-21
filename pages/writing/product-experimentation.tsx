@@ -1,3 +1,4 @@
+import Button from "@/components/Button/Button";
 import Head from "next/head";
 import React from "react";
 
@@ -1013,6 +1014,20 @@ const ProductExperimentation = () => {
             to help you refine assumptions, generate hypotheses, or make sense
             of user feedback.
           </p>
+        </section>
+
+        <section>
+          <div className="callout" style={{ marginTop: "5rem" }}>
+            <h3 style={{ marginTop: "2rem" }}>
+              Speak to an AI assistant trained on this workshop content!
+            </h3>
+            <Button
+              url="https://chatgpt.com/g/g-tS7l1v3eX-product-experiment-assistant"
+              openInNewTab
+            >
+              Go to AI assistant
+            </Button>
+          </div>
         </section>
 
         <section style={{ marginTop: "5rem" }}>

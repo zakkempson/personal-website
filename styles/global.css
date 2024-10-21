@@ -132,6 +132,11 @@ p > img {
   background-color: #d6f1ff;
 }
 
+.callout {
+  padding: 2rem;
+  background-color: #f0f0f0;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
